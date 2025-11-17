@@ -1,61 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galería de Fotos 2025</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival de Novela Negra 2026</title>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fuente noir tipo máquina de escribir -->
+  <!-- Fuente tipo máquina de escribir -->
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Icono del sitio -->
   <link rel="icon" href="img/Logo.jpg">
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-    /* ======== ESTILOS BASE ======== */
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
     }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #222;
-      color: white;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-.titulo {
-      color: white; 
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-   }
-    /* Segunda línea */
-    .subtitulo {
-      justify-content: left;        /* centra el grupo completo */
-      color: red;
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-    }
-    /* ======== GALERÍA ======== */
+  /* ======== GALERÍA ======== */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -225,27 +194,55 @@
 }
   </style>
 </head>
-<body>
+<body class="bg-black text-white">
 
-  <header>
+<header>
      <!-- Contenedor del logo y el título -->
- <div class="relative flex items-center justify-center px-8 py-4">
-  <!-- Logo -->
-  <img 
-    src="img/Logo.jpg" 
-    alt="Logo del Club" 
-    class="absolute left-8 w-32 h-32 object-contain"
-  />
-<!-- Título -->
-  <div class="text-center">
-    <span class="titulo">XII FESTIVAL INTERNACIONAL<br></span>
-    <span class="subtitulo">DE NOVELA NEGRA Y CRIMINAL</span>
-  </div>  
-</div>
+   <!-- HEADER -->
+<header class="px-8 py-4 max-w-8xl mx-auto">
+     
+  <div class="flex flex-wrap justify-between py-4 relative">
+
+    <!-- Logo izquierda -->
+    <div class="flex-shrink-0">
+      <img 
+        src="img/Logo.jpg"
+        alt="Logo del Club"
+        class="w-32 h-32 object-contain"
+      />
+    </div>
+
+    <!-- Texto centrado -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl text-white leading-tight">
+        FESTIVAL INTERNACIONAL <br>
+        <span class="text-red-500 md:text-2xl">
+          DE NOVELA NEGRA Y CRIMINAL
+        </span>
+      </h1>
+    </div>
+
+    <!-- Redes derecha -->
+    <div class="flex justify-items-center gap-4 text-2xl">
+
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" 
+         target="_blank" class="text-white hover:text-blue-500">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/lascasasahorcadas/" 
+         target="_blank" class="text-white hover:text-pink-500">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://x.com/CasasAhorcadas" 
+         target="_blank" class="text-white hover:text-sky-400">
+        <i class="fab fa-x-twitter fa-lg"></i>
+      </a>
+    </div>
+  </div>
  
   </header>
  <!-- Miércoles JLinares-->
-  <div class="gallery">
+  <div class="gallery bg-white">
     <div class="photo-card">
       <a href="#img1"><img src="Galeria_2025_archivos/Miercoles_1.jpg" alt="Foto 1"></a>
         <div class="caption-bar">Presentación Inaugural</div>
@@ -267,7 +264,7 @@
     </a>
   </div>
 <!-- Miércoles Juan Madrid-->
-  <div class="gallery">
+  <div class="gallery bg-white">
       <div class="photo-card">
       <a href="#img4"><img src="Galeria_2025_archivos/Miercoles_2.jpg" alt="Foto 4"></a>
       <div class="caption-bar">Homenaje a Juan Madrid </div>
@@ -287,7 +284,7 @@
    </div>
 
    <!-- Jueves Los Mola-->
-  <div class="gallery">
+  <div class="gallery bg-white">
       <div class="photo-card">
       <a href="#img8"><img src="Galeria_2025_archivos/Jueves_1.jpg" alt="Foto 8"></a>
       <div class="caption-bar">Nos mola Carmen Mola</div>
@@ -306,7 +303,7 @@
     </div>
   </div>  
 <!-- Jueves Paz-->
- <div class="gallery">
+ <div class="gallery bg-white">
     <div class="photo-card">
       <a href="#img12"><img src="Galeria_2025_archivos/Jueves_2.jpg" alt="Foto 12"></a>
       <div class="caption-bar">Perfilando al asesino</div>
@@ -324,7 +321,7 @@
       <div class="caption-bar">El asesino</div>
     </div>
 <!-- Viernes Benzo-->
- <div class="gallery">
+ <div class="gallery bg-white">
   <div class="photo-card">
       <a href="#img16"><img src="Galeria_2025_archivos/Viernes_1.jpg" alt="Foto 16"></a>
       <div class="caption-bar">Premiados</div>
@@ -343,7 +340,7 @@
   </div>
 </div>
 <!-- Viernes Rivas-->
-<div class="gallery">
+<div class="gallery bg-white">
   <div class="photo-card">
       <a href="#img20"><img src="Galeria_2025_archivos/Viernes_2.jpg" alt="Foto 20"></a>
       <div class="caption-bar">Detrás del cielo</div>
@@ -362,7 +359,7 @@
   </div>
 </div>
 <!-- Viernes cubanos-->  
-<div class="gallery">
+<div class="gallery bg-white">
   <div class="photo-card">
       <a href="#img24"><img src="Galeria_2025_archivos/Viernes_3.jpg" alt="Foto 24"></a>
       <div class="caption-bar">Novela Negra Cubana</div>
