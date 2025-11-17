@@ -3,193 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Festival de Novela Negra 2026 </title>
+  <title>Festival de Novela Negra 2026</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fuente noir tipo máquina de escribir -->
+  <!-- Fuente tipo máquina de escribir -->
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Icono del sitio -->
   <link rel="icon" href="img/Logo.jpg">
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-    header {
-      background-color: black;
-      margin-top: 30px;
-    }
-
-    /* Menú */
-       /* Menú */
-    .linea-menu {
-      display: flex;
-      justify-content: center;        /* centra el grupo completo */
-      align-items:center;            /* alinea verticalmente */
-      gap: 40px;                      /* espacio entre texto y menú */
-      margin-top: 10px;
-      flex-wrap: wrap;                /* permite adaptarse en móvil */
-      text-align: right;
-      font-size: 30px;
-    }
-    /* Primera línea */ 
-  .titulo {
-      color: white; 
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-   }
-    /* Segunda línea */
-    .subtitulo {
-      justify-content: left;        /* centra el grupo completo */
-      color: red;
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-    }
-    .colaboran {
-      justify-content: left;        /* centra el grupo completo */
-      color: black;
-      font-size: 15px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-    }
-     /* Menú */
-    nav  {
-      display: flex;
-      gap: 30 px;
-      transition: color 0.3s ease;
-      color: white;
-      font-family: 'Special Elite', serif;
-     text-decoration: none;
-      margin: 0 10px;
-      transition: color 0.3s;
-      font-size: 30px;
-    }
-
-    nav a:hover {
-      color: #e50914;
-    }
-
-    
-    body {
-      font-family: 'Special Elite', serif;
-      background-color: black;
-      color: white;
-    }  
-
-    
-    h1, h2 {
-      color: white; 
-      font-size: 30px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      letter-spacing: 2px;
-     }
-
-     .espacio {
-      margin-top: 10px;
-     }
-
-     .casas {
-     text-align : center;
-     justify-content: center;
-    
-     }
-
-      /* Primera línea */ 
-  .edicion {
-      color: white; 
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-      
-   }
-
-    nav a {
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #e50914;
-    }
-    .hero-section {
-    /* Agrega un margen superior (espacio) de 40 píxeles. 
-       Ajusta este valor (40px) según el espacio que necesites. */
-    margin-top: 70px; 
-    
-    /* Si quieres asegurar la alineación a la izquierda (reemplazando align="left" obsoleto): */
-    text-align: left;
-}
-
-    footer a:hover {
-      color: #e50914;
-    }
-    footer {
-      font-family: 'Special Elite', serif;
-      background-color: white;
-      color: black;
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
     }
   </style>
 </head>
-
 <body class="bg-black text-white">
-  
-  <!-- HEADER -->
-  <header >
- 
-      <h1>
-        <span class="titulo ml-8">FESTIVAL INTERNACIONAL</span><br>
-        <span class="subtitulo ml-8">DE NOVELA NEGRA Y CRIMINAL</span></span>
-      </h1>
 
-      <div class="linea-menu flex justify-end items center">
-      
-        <nav>
-          <ul class="flex gap-6 text-lg">
-          <li><a href="index.html" class="text-red-500 font-semibold">Inicio</a></li>
+  <!-- HEADER principal (título + redes + nav) -->
+  <header class="px-8 py-4 max-w-8xl mx-auto">
+    <div class="flex items-center justify-between">
+      <div class="flex-1">
+        <h1 class="site-title text-lg md:text-2xl text-white">
+          FESTIVAL INTERNACIONAL<br>
+          <span class="site-subtitle text-red-500 md:text-2xl">DE NOVELA NEGRA Y CRIMINAL</span>
+        </h1>
+      </div>
+
+      <!-- iconos redes (siempre visibles) -->
+      <div class="flex items-center gap-4 mr-6 text-2xl md:text-2xl"">
+        <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" target="_blank" class="text-white hover:text-blue-500" aria-label="Facebook">
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/lascasasahorcadas/" target="_blank" class="text-white hover:text-pink-500" aria-label="Instagram">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a href="https://x.com/CasasAhorcadas" target="_blank" class="text-white hover:text-sky-400" aria-label="X / Twitter">
+          <i class="fab fa-x-twitter fa-lg"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Navegación: botón hamburguesa en móvil -->
+    <div class="mt-4 flex items-center justify-between">
+      <a href="img/Cuadriptico.pdf" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <button class="bg-red-600 text-white font-semibold text-base md:text-2xl px-6 py-2 rounded-lg hover:bg-red-700 transition">
+          Programa
+        </button>
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+
+      <!-- Menú principal: oculto en móvil, visible en md+ -->
+      <nav id="main-nav" class="hidden md:block ml-6">
+        <ul class="flex gap-6 text-lg">
+          <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
           <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
           <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
           <li><a href="premios.html" class="hover:text-red-500">Premios</a></li>
           <li><a href="anteriores.html" class="hover:text-red-500">Ediciones anteriores</a></li>
           <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
-          </ul>
-        </nav>
-      
-        <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" target="_blank" class="hover:text-blue-500">
-              <i class="fab fa-facebook"></i>
-           </a>
-          <a href="https://www.instagram.com/lascasasahorcadas/" target="_blank" class="hover:text-pink-500">
-              <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://x.com/CasasAhorcadas" target="_blank" class="hover:text-sky-400">
-              <i class="fab fa-x-twitter mr-8"></i>
-        </a>
-      </div>  
+        </ul>
+      </nav>
+    </div>
 
+    <!-- Menú mobile desplegable -->
+    <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
+      <ul class="flex flex-col gap-2 text-base">
+        <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+        <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+        <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
+        <li><a href="premios.html" class="block px-3 py-2 rounded hover:bg-white/5">Premios</a></li>
+        <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Ediciones anteriores</a></li>
+        <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO -->
-
-<!-- Botón Programa -->
-<div class="flex justify-left mt-2 mb-1 ml-8">
-  <a href="img/Cuadriptico.pdf" target="_blank" rel="noopener noreferrer">
-    <button class="bg-red-600 text-white font-semibold text-2xl px-8 py-3 rounded-lg hover:bg-red-700 transition">
-      Programa
-    </button>
-  </a>
-</div>
-
-<!-- Encabezado principal -->
-<header class="flex flex-col md:flex-row items-center justify-between px-8">
+  <!-- Encabezado principal -->
+<main class="flex flex-col md:flex-row items-center justify-between px-8 mt-16">
   <!-- Texto alineado a la izquierda -->
   <div class="text-left md:w-1/2">
-    <h1 class="edicion">
+    <h1 class="edicion text-3xl" >
       XIII Edición<br><br>
       4 – 7 febrero 2026 · Cuenca
     </h1>
@@ -199,10 +105,11 @@
   <div class="flex justify-left md:w-1/2 my-4 md:my-0">
     <img src="img/Logo.jpg" alt="Logo del Club" class="w-full max-w-[500px] h-auto object-contain" loading="lazy">
   </div>
-</header>
+</main>
 
+  
   <!-- FOOTER -->
-<footer class="flex flex-col md:flex-row items-start justify-between px-8 py-1 bg-gray-100 gap-6">
+<footer class="flex flex-col md:flex-row items-start justify-between px-8 py-1 bg-gray-100 gap-6 bg-white text-black">
   <!-- Patrocinan -->
   <div class="md:w-1/2">
     <h2 class="colaboran mb-2">Patrocinan:</h2>
@@ -231,3 +138,33 @@
     </div>
   </div>
 </footer>
+
+  <!-- JS para el menú hamburguesa -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileNav.classList.contains('hidden');
+      if (isHidden) {
+        mobileNav.classList.remove('hidden');
+        menuBtn.innerHTML = '<i class="fas fa-times fa-lg"></i>';
+        menuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileNav.classList.add('hidden');
+        menuBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        mobileNav.classList.add('hidden');
+        menuBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
