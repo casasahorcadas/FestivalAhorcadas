@@ -1,197 +1,105 @@
 <!DOCTYPE html>
-<html lang="es">
+-<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Festival de Novela Negra 2026 </title>
+  <title>Festival de Novela Negra 2026</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fuente noir tipo máquina de escribir -->
+  <!-- Fuente tipo máquina de escribir -->
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Icono del sitio -->
   <link rel="icon" href="img/Logo.jpg">
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-    header {
-      background-color: black;
-      margin-top: 30px;
-    }
-
-    /* Menú */
-       /* Menú */
-    .linea-menu {
-      display: flex;
-      justify-content: center;        /* centra el grupo completo */
-      align-items:center;            /* alinea verticalmente */
-      gap: 40px;                      /* espacio entre texto y menú */
-      margin-top: 10px;
-      flex-wrap: wrap;                /* permite adaptarse en móvil */
-      text-align: right;
-      font-size: 30px;
-    }
-    /* Primera línea */ 
-  .titulo {
-      color: white; 
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-   }
-    /* Segunda línea */
-    .subtitulo {
-      justify-content: left;        /* centra el grupo completo */
-      color: red;
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-    }
-    .colaboran {
-      justify-content: left;        /* centra el grupo completo */
-      color: black;
-      font-size: 15px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-    }
-     /* Menú */
-    nav  {
-      display: flex;
-      gap: 30 px;
-      transition: color 0.3s ease;
-      color: white;
-      font-family: 'Special Elite', serif;
-     text-decoration: none;
-      margin: 0 10px;
-      transition: color 0.3s;
-      font-size: 30px;
-    }
-
-    nav a:hover {
-      color: #e50914;
-    }
-
-    
-    body {
-      font-family: 'Special Elite', serif;
-      background-color: black;
-      color: white;
-    }  
-
-    
-    h1, h2 {
-      color: white; 
-      font-size: 30px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      letter-spacing: 2px;
-     }
-
-     .espacio {
-      margin-top: 10px;
-     }
-
-     .casas {
-     text-align : center;
-     justify-content: center;
-    
-     }
-
-      /* Primera línea */ 
-  .edicion {
-      color: white; 
-      font-size: 25px; /* Tamaño  */
-      font-family: 'Special Elite', serif;
-      text-align: left;
-      
-   }
-
-    nav a {
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #e50914;
-    }
-    .hero-section {
-    /* Agrega un margen superior (espacio) de 40 píxeles. 
-       Ajusta este valor (40px) según el espacio que necesites. */
-    margin-top: 70px; 
-    
-    /* Si quieres asegurar la alineación a la izquierda (reemplazando align="left" obsoleto): */
-    text-align: left;
-}
-
-    footer a:hover {
-      color: #e50914;
-    }
-    footer {
-      font-family: 'Special Elite', serif;
-      background-color: white;
-      color: black;
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
     }
   </style>
 </head>
-
 <body class="bg-black text-white">
   
   <!-- HEADER -->
-  <header >
- <!-- Contenedor del logo y el título -->
- <div class="relative flex items-center justify-center px-8 py-4">
-  <!-- Logo -->
-  <img 
-    src="img/Logo.jpg" 
-    alt="Logo del Club" 
-    class="absolute left-8 w-32 h-32 object-contain"
-  />
+<header class="px-8 py-4 max-w-8xl mx-auto">
+     
+  <div class="flex items-center justify-between px-8 py-4 relative">
 
-  <!-- Título -->
-  <div class="text-center">
-    <span class="titulo">FESTIVAL INTERNACIONAL<br></span>
-    <span class="subtitulo">DE NOVELA NEGRA Y CRIMINAL</span>
-  </div>  
-</div>
+    <!-- Logo izquierda -->
+    <div class="flex-shrink-0">
+      <img 
+        src="img/Logo.jpg"
+        alt="Logo del Club"
+        class="w-40 h-40 object-contain"
+      />
+    </div>
 
+    <!-- Texto centrado -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl text-white leading-tight">
+        FESTIVAL INTERNACIONAL <br>
+        <span class="text-red-500 md:text-2xl">
+          DE NOVELA NEGRA Y CRIMINAL
+        </span>
+      </h1>
+    </div>
 
-   <section class="text-center py-12 bg-black/80">
-   
-      <div class="linea-menu flex justify-end items center">
-      
-        <nav>
-          <ul class="flex gap-6 text-lg">
-          <li><a href="index.html" class="text-red-500 font-semibold">Inicio</a></li>
+    <!-- Redes derecha -->
+    <div class="flex justify-items-center gap-4 text-2xl">
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" 
+         target="_blank" class="text-white hover:text-blue-500">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/lascasasahorcadas/" 
+         target="_blank" class="text-white hover:text-pink-500">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://x.com/CasasAhorcadas" 
+         target="_blank" class="text-white hover:text-sky-400">
+        <i class="fab fa-x-twitter fa-lg"></i>
+      </a>
+    </div>
+  </div>
+  <div class="flex justify-end items center">
+        <!-- Menú principal: oculto en móvil, visible en md+ -->
+      <nav id="main-nav" class="hidden md:block mt-4">
+        <ul class="flex gap-6 text-lg">
+          <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
           <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
           <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
           <li><a href="premios.html" class="hover:text-red-500">Premios</a></li>
           <li><a href="anteriores.html" class="hover:text-red-500">Ediciones anteriores</a></li>
           <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
-          </ul>
-        </nav>
-      
-        <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" target="_blank" class="hover:text-blue-500">
-              <i class="fab fa-facebook"></i>
-           </a>
-          <a href="https://www.instagram.com/lascasasahorcadas/" target="_blank" class="hover:text-pink-500">
-              <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://x.com/CasasAhorcadas" target="_blank" class="hover:text-sky-400">
-              <i class="fab fa-x-twitter mr-8"></i>
-        </a>
-      </div>  
+        </ul>
+      </nav>
+  
 
+    <!-- Menú mobile desplegable -->
+    <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
+      <ul class="flex flex-col gap-2 text-base">
+        <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+        <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+        <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
+        <li><a href="premios.html" class="block px-3 py-2 rounded hover:bg-white/5">Premios</a></li>
+        <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Ediciones anteriores</a></li>
+        <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+      </ul>
+    </nav>
+   </div> 
   </header>
-
   <!-- HERO -->
 
 <!-- Años anteriores -->
 
-<header class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 justify-items-center px-1 py-1">
+<header class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-6 px-1 py-1">
   <!-- 2025 -->
   <div class="flex flex-col items-center space-y-3">
    <a 
@@ -250,7 +158,7 @@
   </div>
 
 </header>
-<header class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-16 justify-items-center px-1 py-1">
+<header class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-16 mt-4 px-1 py-1">
   <!-- 2019 -->
   <div class="flex flex-col items-center space-y-3">
     <div class = "bg-red-600 text-white font-semibold text-2xl px-20 py-1 rounded-lg hover:bg-red-700 transition">
