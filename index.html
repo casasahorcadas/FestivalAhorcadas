@@ -26,16 +26,6 @@
     }
   </style>
 </head>
-<script>
-  const btn = document.getElementById("premios-btn");
-  const menu = document.getElementById("premios-menu");
-  const arrow = document.getElementById("arrow");
-
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    arrow.classList.toggle("rotate-180");
-  });
-</script>
 <body class="bg-black text-white">
 
   <!-- HEADER principal (título + redes + nav) -->
@@ -108,24 +98,6 @@
   </nav>
 </div>
 
-<!-- JS: dropdown + menú móvil -->
-<script>
-  // Abrir menú móvil
-  const mobileBtn = document.getElementById("mobile-menu-btn");
-  const nav = document.getElementById("main-nav");
-
-  mobileBtn.addEventListener("click", () => {
-    nav.classList.toggle("hidden");
-  });
-
-  // Abrir dropdown de Premios en cualquier dispositivo
-  const premiosBtn = document.getElementById("premios-btn");
-  const premiosMenu = document.getElementById("premios-menu");
-
-  premiosBtn.addEventListener("click", () => {
-    premiosMenu.classList.toggle("hidden");
-  });
-</script>
   
 
     <!-- Menú mobile desplegable -->
@@ -220,6 +192,17 @@
       }
     });
   </script>
+<!-- JS: dropdown + menú móvil -->
+<script>
+  const btn = document.getElementById("premios-btn");
+  const menu = document.getElementById("premios-menu");
+  const arrow = document.getElementById("arrow");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  });
+</script>
 
 </body>
 </html>
