@@ -25,40 +25,60 @@
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
   /* ======== GALERÍA ======== */
-.photo-card {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 75px;           /* separación entre tarjetas */
-  align-items: flex-start;
-  white-space: nowrap; /* NO saltar de línea */
-  margin-left: 80px;
-}
+/* ======== GALERÍA ======== */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+      justify-content: center;
+      padding: 30px;
+    }
 
-.photo-card .item {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
+    .photo-card {
+     width: 300px;
+     height: auto;
+     background: white;
+     border-radius: 12px;
+     border: 3px solid #ddd; 
+     overflow: hidden;
+     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+    
+      }
 
-.photo-card img {
-  width: 400px;        /* Ajusta el tamaño a tu gusto */
-  height: auto;
-  cursor: pointer;
-}
+    .photo-card:hover {
+      transform: translateY(-0.3vw);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    }
 
-.caption-bar {
-  margin-top: 5px;
-  background: #222;              /* color de fondo de la franja */
-  color: #fff;                   /* texto blanco */
-  text-align: center;
-  font-weight: 500;
-  font-size: 1rem;
-  border-top: 3px solid #e3e3e3; /* línea separadora elegante */
-  transition: background 0.3s ease, color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.07);
+      filter: brightness(1.05);
+    }
+
+    
+  .caption-bar {
+    background: #222;              /* color de fondo de la franja */
+    color: #fff;                   /* texto blanco */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
 /* Efecto al pasar el ratón por la tarjeta */
   .photo-card:hover .caption-bar {
     background: #444;
@@ -66,7 +86,7 @@
   }
 
     /* ======== RESPONSIVE ======== */
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
       .photo-card img {
         height: 200px;
       }
@@ -134,24 +154,28 @@
 </header>
 
 <!----- GALERÍA DE IMÁGENES --->
-<div class="bg-white">
-  <br><br><br> 
-<div class="gallery mt-8">
+
+
+<div class="gallery bg-white mt-8">
   <div class="photo-card">
     <div class="item">
       <img src="Galeria_2025_archivos/Miercoles_1.jpg" onclick="location.href='galeria_2025_s.html?set=1&img=1'">
       <div class="caption-bar">Presentación Inaugural</div>
     </div>
+  </div>
 
+  <div class="photo-card">
     <div class="item">
       <img src="Galeria_2025_archivos/Miercoles_2.jpg" onclick="location.href='galeria_2025_s.html?set=2&img=1'">
       <div class="caption-bar">Homenaje a Juan Madrid</div>
     </div>
-
+  </div>  
+  <div class="photo-card">
     <div class="item">
       <img src="Galeria_2025_archivos/Jueves_1.jpg" onclick="location.href='galeria_2025_s.html?set=3&img=1'">
       <div class="caption-bar">Nos Mola Carmen Mola</div>
     </div>
+  </div> 
   </div>
 </div>
 <br><br>
@@ -206,7 +230,7 @@
         <div class="caption-bar">Hasta el año que viene</div>
       </div>
     </div>
-</div>
+
 
 
 </div>
