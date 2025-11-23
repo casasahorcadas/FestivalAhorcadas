@@ -12,3 +12,6 @@ img {
   max-width: 100%;
   display: block;
 }
+#lightbox {
+  display:none !important;
+}
