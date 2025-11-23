@@ -26,6 +26,16 @@
     }
   </style>
 </head>
+<script>
+  const btn = document.getElementById("premios-btn");
+  const menu = document.getElementById("premios-menu");
+  const arrow = document.getElementById("arrow");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  });
+</script>
 <body class="bg-black text-white">
 
   <!-- HEADER principal (título + redes + nav) -->
@@ -65,20 +75,64 @@
         <i class="fas fa-bars fa-lg"></i>
       </button>
 
-      <!-- Menú principal: oculto en móvil, visible en md+ -->
-      <nav id="main-nav" class="hidden md:block ml-6">
-        <ul class="flex gap-6 text-lg">
-          <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
-          <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
-          <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
-          <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
-          <li><a href="premios.html" class="hover:text-red-500">Premios</a></li>
-          <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
-        </ul>
-      </nav>
-    </div>
+      <!-- Botón móvil para abrir el menú -->
+  <button id="mobile-menu-btn" class="md:hidden p-3">
+    ☰
+  </button>
+
+     <!-- Menú principal -->
+  <nav id="main-nav" class="hidden md:block mt-4">
+    <ul class="flex md:flex-row flex-col gap-6 text-lg">
+
+      <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
+      <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
+      <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
+      <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
+
+      <!-- PREMIOS con desplegable -->
+      <li class="relative">
+  <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
+    Premios
+    <span id="arrow" class="transition-transform">▼</span>
+  </button>
+
+  <!-- Submenú desplegable -->
+  <ul id="premios-menu" class="hidden absolute left-0 mt-2 bg-white shadow-lg rounded-md py-2 text-base w-40">
+    <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
+    <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
+  </ul>
+</li>
+      <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+<!-- JS: dropdown + menú móvil -->
+<script>
+  // Abrir menú móvil
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const nav = document.getElementById("main-nav");
+
+  mobileBtn.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+  });
+
+  // Abrir dropdown de Premios en cualquier dispositivo
+  const premiosBtn = document.getElementById("premios-btn");
+  const premiosMenu = document.getElementById("premios-menu");
+
+  premiosBtn.addEventListener("click", () => {
+    premiosMenu.classList.toggle("hidden");
+  });
+</script>
+  
 
     <!-- Menú mobile desplegable -->
+     <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
     <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
       <ul class="flex flex-col gap-2 text-base">
         <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
@@ -87,8 +141,9 @@
         <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
         <li><a href="premios.html" class="block px-3 py-2 rounded hover:bg-white/5">Premios</a></li>
         <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
-       </ul>
+      </ul>
     </nav>
+   </div> 
   </header>
 
   <!-- Encabezado principal -->
