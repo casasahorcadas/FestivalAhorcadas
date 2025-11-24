@@ -80,7 +80,7 @@
       <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
 
       <!-- PREMIOS con desplegable -->
-      <li class="relative">
+   <li class="relative">
   <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
     Premios
     <span id="arrow" class="transition-transform">▼</span>
@@ -101,20 +101,28 @@
   
 
     <!-- Menú mobile desplegable -->
-     <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-        <i class="fas fa-bars fa-lg"></i>
+     <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
+  <ul class="flex flex-col gap-2 text-base">
+    <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+    <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+    <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+    <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
+
+    <!-- PREMIOS con desplegable para móvil -->
+    <li class="relative">
+      <button id="premios-btn-mobile" class="block px-3 py-2 rounded hover:bg-white/5 flex items-center gap-2 w-full text-left">
+        Premios
+        <span id="arrow-mobile" class="transition-transform">▼</span>
       </button>
-    <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
-      <ul class="flex flex-col gap-2 text-base">
-        <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
-        <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
-        <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
-        <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
-        <li><a href="premios.html" class="block px-3 py-2 rounded hover:bg-white/5">Premios</a></li>
-        <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
+      <!-- Submenú desplegable móvil -->
+      <ul id="premios-menu-mobile" class="hidden mt-1 bg-white/10 shadow-inner rounded-md py-1 text-sm ml-4">
+        <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-white/20">Tormo Negro</a></li>
+        <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-white/20">Bevilacqua</a></li>
       </ul>
-    </nav>
+    </li>
+    <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
+  </ul>
+</nav>
    </div> 
   </header>
 
@@ -168,9 +176,7 @@
 
   <!-- JS para el menú hamburguesa -->
   <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-
+    
     menuBtn.addEventListener('click', () => {
       const isHidden = mobileNav.classList.contains('hidden');
       if (isHidden) {
@@ -194,14 +200,28 @@
   </script>
 <!-- JS: dropdown + menú móvil -->
 <script>
-  const btn = document.getElementById("premios-btn");
-  const menu = document.getElementById("premios-menu");
-  const arrow = document.getElementById("arrow");
+// Script para el botón hamburguesa (menú principal móvil)
+const menuBtn = document.getElementById('menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
 
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    arrow.classList.toggle("rotate-180");
-  });
+menuBtn.addEventListener('click', () => {
+  mobileNav.classList.toggle('hidden');
+  const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+  menuBtn.setAttribute('aria-expanded', !isExpanded);
+});
+
+// Script para el submenú "Premios" en móvil
+const premiosBtn = document.getElementById('premios-btn');
+const premiosMenu = document.getElementById('premios-menu');
+const arrow = document.getElementById('arrow');
+
+if (premiosBtn && premiosMenu) {
+    premiosBtn.addEventListener('click', () => {
+        premiosMenu.classList.toggle('hidden');
+        // Opcional: rotar flecha
+        arrow.classList.toggle('rotate-180');
+    });
+}
 </script>
 
 </body>
