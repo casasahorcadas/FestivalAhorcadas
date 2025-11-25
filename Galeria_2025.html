@@ -25,25 +25,23 @@
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
   /* ======== GALERÍA ======== */
-/* ======== GALERÍA ======== */
+    .galeria-completa-wrapper {
+      background-color: white;
+      padding: 5px; /* Añade algo de espacio alrededor de las fotos */
+  }
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 100px;
-      justify-content: center;
-      padding: 30px;
-    }
+      justify-content: space-between; /* Distribuye el espacio uniformemente */
+      margin-bottom: 20px;
+         }
 
     .photo-card {
-     width: 300px;
-     height: auto;
-     background: white;
-     border-radius: 12px;
-     border: 3px solid #ddd; 
-     overflow: hidden;
-     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
-     transition: all 0.3s ease;
-    
+    /* En escritorio (3 columnas), cada tarjeta ocupará aproximadamente un tercio del ancho */
+       width: calc(20% ); /* Ajusta el 10px según el espacio deseado entre fotos */
+       margin-left: 100px;
+       margin-right: 100px;
+       margin-bottom: 30px; /* Espaciado inferior para separar las tarjetas */
       }
 
     .photo-card:hover {
@@ -86,29 +84,18 @@
   }
 
     /* ======== RESPONSIVE ======== */
- @media (max-width: 768px) {
-      .photo-card img {
-        height: 200px;
-      }
-    }
-  @media (max-width: 600px) {
-  .no-mobile-break {
-    display: none;
+ @media only screen and (max-width: 600px) {
+  .gallery {
+    /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
+    justify-content: center; /* Centra las tarjetas si es necesario */
   }
-}  
-
-    @media (max-width: 480px) {
-      .photo-card {
-        width: 90%;
-      }
-      .photo-card img {
-        height: 180px;
-      }
-      .no-mobile-break {
-       display: none;
-     }
-    }
-
+  
+  .photo-card {
+    /* En móvil, cada tarjeta puede ocupar todo el ancho */
+    width: 100%;
+    margin-bottom: 15px; /* Espaciado entre fotos en móvil (ajusta si es necesario) */
+  }
+}
   </style>
 </head>
 
@@ -127,7 +114,7 @@
       <img 
         src="img/Logo.jpg"
         alt="Logo del Club"
-        class="w-32 h-32 object-contain"
+        class="w-40 h-40 object-contain"
       />
     </div>
 
@@ -163,31 +150,29 @@
 
 <!----- GALERÍA DE IMÁGENES --->
 
-
-<div class="gallery bg-white mt-8">
-
-  <div class="photo-card">
-    <div class="item">
-      <img src="Galeria_2025_archivos/Miercoles_1.jpg" onclick="location.href='galeria_2025_s.html?set=1&img=1'">
-      <div class="caption-bar">Presentación Inaugural</div>
+<div class="galeria-completa-wrapper"> 
+  <div class="gallery">
+    <div class="photo-card">
+      <div class="item">
+        <img src="Galeria_2025_archivos/Miercoles_1.jpg" onclick="location.href='galeria_2025_s.html?set=1&img=1'">
+        <div class="caption-bar">Presentación Inaugural</div>
+      </div>
     </div>
+    <div class="photo-card">
+      <div class="item">
+        <img src="Galeria_2025_archivos/Miercoles_2.jpg" onclick="location.href='galeria_2025_s.html?set=2&img=1'">
+        <div class="caption-bar">Homenaje a Juan Madrid</div>
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="Galeria_2025_archivos/Jueves_1.jpg" onclick="location.href='galeria_2025_s.html?set=3&img=1'">
+        <div class="caption-bar">Nos Mola Carmen Mola</div>
+      </div>
+    </div> 
   </div>
-  <div class="photo-card">
-    <div class="item">
-      <img src="Galeria_2025_archivos/Miercoles_2.jpg" onclick="location.href='galeria_2025_s.html?set=2&img=1'">
-      <div class="caption-bar">Homenaje a Juan Madrid</div>
-    </div>
-  </div>  
-  <div class="photo-card">
-    <div class="item">
-      <img src="Galeria_2025_archivos/Jueves_1.jpg" onclick="location.href='galeria_2025_s.html?set=3&img=1'">
-      <div class="caption-bar">Nos Mola Carmen Mola</div>
-    </div>
-  </div> 
-  <br><br><br>
-</div>
 
-<div class="gallery bg-white">
+  <div class="gallery">
     <div class="photo-card">
       <div class="item">
         <img src="Galeria_2025_archivos/Jueves_2.jpg" onclick="location.href='galeria_2025_s.html?set=s_1&img=1'">
@@ -206,11 +191,9 @@
         <div class="caption-bar">Detrás del cielo</div>
       </div>
     </div>
-<br><br><br>    
-</div>
+  </div>
 
-
-<div class="gallery bg-white">
+  <div class="gallery bg-white">
     <div class="photo-card">
       <div class="item">
         <img src="Galeria_2025_archivos/Viernes_3.jpg" onclick="location.href='galeria_2025_s.html?set=s1_1&img=1'">
@@ -229,7 +212,7 @@
         <div class="caption-bar">Novela Negra Sueca</div>
       </div>
     </div>  
-<br><br><br>
+  </div>
 </div>
 
 <div class="gallery bg-white">
