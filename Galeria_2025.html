@@ -41,7 +41,7 @@
        width: calc(20% ); /* Ajusta el 10px según el espacio deseado entre fotos */
        margin-left: 100px;
        margin-right: 100px;
-       margin-bottom: 30px; /* Espaciado inferior para separar las tarjetas */
+       margin-bottom: 20px; /* Espaciado inferior para separar las tarjetas */
       }
 
     .photo-card:hover {
@@ -59,7 +59,7 @@
     }
 
     .photo-card img:hover {
-      transform: scale(1.07);
+      transform: scale(1.01);
       filter: brightness(1.05);
     }
 
@@ -94,8 +94,13 @@
     /* En móvil, cada tarjeta puede ocupar todo el ancho */
     width: 100%;
     margin-bottom: 15px; /* Espaciado entre fotos en móvil (ajusta si es necesario) */
+    margin-left: 0 !important; 
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;   
   }
-}
+  
+ }
   </style>
 </head>
 
