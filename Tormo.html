@@ -24,7 +24,126 @@
       .site-title { font-size: 1.15rem; }
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
-  </style>
+    .texto_completo{
+      background-color: white;
+      color:black;
+    }
+    .texto_grande {
+      /* Intentamos usar las fuentes más negras disponibles en los sistemas */
+      /*font-family: 'Arial Black', Gadget, sans-serif; */
+      
+      /* Esto asegura que la fuente sea lo más gruesa posible */
+      font-weight: 900; 
+      
+      /* Opciones alternativas si prefieres otro estilo: */
+      /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+      font-family: Helvetica, Arial, sans-serif; font-weight: bold; 
+      margin-left: 40px;
+      margin-bottom: 20px;
+       }
+/* El contenedor principal usa flexbox para organizar sus hijos */
+/* Contenedor general en tres columnas */
+.tres-columnas-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 40px;   /* Elimina el margen izquierdo */
+    padding-right: 30px;  /* Elimina el margen derecho */
+    padding-top: 15px; /* Mantiene el margen superior/inferior si lo deseas */
+    padding-bottom: 25px;
+}
+
+/* Todas las columnas comparten base */
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Columna 1 – izquierda */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* Columna 2 – texto principal */
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 30px;
+}
+
+.content {
+    flex: 1;            /* El texto usa TODO el espacio central */
+    min-width: 0;       /* Permite que se reduzca correctamente */
+}
+
+/* Columna 3 – derecha */
+.sidebar-right {
+    width: 360px;       /* Aquí decides qué tan grande quieres las imágenes */
+    flex-shrink: 0;     /* No se encoge */
+    text-align: center;
+}
+
+/* Imagen del logo */
+.sidebar-right img {
+    width: 100%;        /* Aumenta o reduce automáticamente */
+    height: auto;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+/* Caption */
+.caption {
+    background: #222;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 3px solid #e3e3e3;
+}
+
+/* ----------- MÓVIL / TABLET ----------- */
+@media (max-width: 1024px) {
+    
+    /* Las columnas pasan a estar una debajo de la otra */
+    .tres-columnas-layout {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    /* Las columnas se estiran a ancho completo del móvil */
+    .sidebar,
+    .content,
+    .sidebar-right {
+        width: 100%;
+    }
+
+    /* Un poco más de espacio entre bloques */
+    .sidebar,
+    .sidebar-right {
+        margin-bottom: 25px;
+    }
+
+    /* Las imágenes se mantienen grandes y fluidas */
+    .sidebar-right img,
+    .sidebar img {
+        width: 100%;
+        height: auto;
+    }
+}
+.texto {
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+ </style>
 </head>
 <body class="bg-black text-white">
   
@@ -70,81 +189,173 @@
     </div>
   </div>
   <div class="flex justify-end items center">
-        <!-- Menú principal: oculto en móvil, visible en md+ -->
-    <div class="flex justify-end items-center">
-
-  <!-- Botón móvil para abrir el menú -->
-  <button id="mobile-menu-btn" class="md:hidden p-3">
-    ☰
-  </button>
-
-  <!-- Menú principal -->
-  <nav id="main-nav" class="hidden md:block mt-4">
-    <ul class="flex md:flex-row flex-col gap-6 text-lg">
-
-      <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
-      <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
-      <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
-      <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
-
-      <!-- PREMILOS con desplegable -->
-      <li class="relative group">
-
-        <!-- Botón del desplegable -->
-        <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
-          Premios ▼
-        </button>
-
-        <!-- Submenú -->
-        <ul id="premios-menu" class="hidden absolute left-0 top-full bg-white shadow-md rounded-md w-40 flex-col text-base">
-          <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
-          <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
-        </ul>
-
-      </li>
-
-      <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
-
-    </ul>
-  </nav>
-</div>
-
-<!-- JS: dropdown + menú móvil -->
-<script>
-  // Abrir menú móvil
-  const mobileBtn = document.getElementById("mobile-menu-btn");
-  const nav = document.getElementById("main-nav");
-
-  mobileBtn.addEventListener("click", () => {
-    nav.classList.toggle("hidden");
-  });
-
-  // Abrir dropdown de Premios en cualquier dispositivo
-  const premiosBtn = document.getElementById("premios-btn");
-  const premiosMenu = document.getElementById("premios-menu");
-
-  premiosBtn.addEventListener("click", () => {
-    premiosMenu.classList.toggle("hidden");
-  });
-</script>
-  
-
-    <!-- Menú mobile desplegable -->
-     <!-- Botón hamburguesa -->
+  <!-- Botón hamburguesa -->
       <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
         <i class="fas fa-bars fa-lg"></i>
       </button>
-    <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
-      <ul class="flex flex-col gap-2 text-base">
-        <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
-        <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
-        <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
-        <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
-        <li><a href="premios.html" class="block px-3 py-2 rounded hover:bg-white/5">Premios</a></li>
-        <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
-      </ul>
-    </nav>
-   </div> 
-  </header>
+
+       <!-- Menú principal -->
+      <nav id="main-nav" class="hidden md:block mt-4">
+        <ul class="flex md:flex-row flex-col gap-6 text-lg">
+            <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
+            <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
+            <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
+            <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
+
+      <!-- PREMIOS con desplegable -->
+            <li class="relative">
+              <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
+                Premios
+                <span id="arrow" class="transition-transform">▼</span>
+              </button>
+            <!-- Submenú desplegable -->
+                <ul id="premios-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40">
+                  <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
+                  <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
+                </ul>
+            </li>
+            <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Menú mobile desplegable -->
+  <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
+    <ul class="flex flex-col gap-2 text-base">
+      <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+      <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+      <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+      <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
+    <!-- PREMIOS con desplegable para móvil -->
+      <li class="relative">
+        <button id="premios-btn-mobile" class="block px-3 py-2 rounded hover:bg-white/5 flex items-center gap-2 w-full text-left">
+          Premios
+          <span id="arrow-mobile" class="transition-transform">▼</span>
+        </button>
+        <!-- Submenú desplegable móvil -->
+        <ul id="premios-menu-mobile" class="hidden mt-1 bg-white/10 shadow-inner rounded-md py-1 text-sm ml-4">
+          <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-white/20">Tormo Negro</a></li>
+          <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-white/20">Bevilacqua</a></li>
+        </ul>
+      </li>
+    <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
+    </ul>
+  </nav>
+ </div> 
+</header>
+
+<div class="texto_completo">
+  <p class="texto_grande md:text-3xl">
+   PREMIO TORMO NEGRO MASFARNÉ
+  </p>
+
+  <!--- Ponemos Texto con la foto del Tormo y el logo de Masfarné--->
+<div class="container tres-columnas-layout">
+    
+    <!-- Columna 1 (Existente) -->
+    <div class="sidebar columna">
+        <img src="img/Tormo Negro.jpg" alt="Tormo Negro">
+        <div class="caption">
+           <strong>Autor: Luis del Castillo</strong>
+        </div>
+    </div>
+ 
+    <!-- Nuevo contenedor para las otras dos columnas -->
+    <div class="main-content-wrapper">
+        
+        <!-- Columna 2 (Contenido principal existente) -->
+        <div class="content columna">
+            
+            <p class="texto md:text-2xl">
+                  El premio <strong>Tormo Negro Masfarné</strong> es un premio literario otorgado por el Club de Lectura de <strong>Las Casas Ahorcadas</strong>
+                  de <strong>Cuenca</strong>. Se entrega anualmente durante la celebración del <strong>Festival Las Casas Ahorcadas</strong>.
+            </p>
+            <p class="texto md:text-2xl">
+                  Fue creado en 2011 como una forma de reconocer y promocionar la <strong>literatura negra</strong> de calidad. 
+                  Desde su primera edición, ha logrado consolidarse como uno de los premios más importantes en el ámbito de la 
+                  <strong>novela negra en España</strong>, por ser un premio concedido directamente por los lectores, el jurado más exigente.
+            </p>  
+            <p class="texto md:text-2xl">
+                  La obra ganadora es escogida por votación entre los miembros del club, que hacen una selección entre las obras leídas 
+                  durante el curso. Se hace una primera ronda en la que se eligen los finalistas y, al inicio del curso siguiente, se hace 
+                  la votación final, en segunda vuelta, sobre esos finalistas. La entrega del premio se realiza durante la inauguración del 
+                  <strong>Festival Las Casas Ahorcadas</strong>. Actualmente está dotado con 1.500€.
+            </p>
+        </div>
+        
+        <!-- Columna 3 (Nueva columna, por ejemplo para la foto de Benzo y más texto) -->
+        <div class="sidebar-right columna">
+          <img src="img/logos/Logo masfarne 2023.JPG" alt="Logo" class="masfarne-logo">
+            <div class="item">  
+                <img src="img/Fernando-Benzo.jpg" class="masfarne-logo">
+                <div class="caption">
+                    <strong>Fernando Benzo<br>
+                    Ganador 2025</strong>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<div class="texto_completo">
+  <p class="texto_grande md:text-3xl">
+   PREMIADOS AÑOS ANTERIORES
+  </p>
+
+<footer></footer>
+  <!-- JS para el menú hamburguesa y el menú-->
+  <script>
+  // --- Código Menú Escritorio (Premios) ---
+  const premiosBtn = document.getElementById('premios-btn');
+  const premiosMenu = document.getElementById('premios-menu');
+  // NOTA: Si 'arrow' es el mismo elemento en móvil y escritorio, puede dar problemas.
+  // Asumiré que en el HTML de escritorio su ID es 'arrow'.
+  const arrow = document.getElementById('arrow'); 
+
+  if (premiosBtn && premiosMenu && arrow) {
+      premiosBtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // Evita que se cierre inmediatamente por el listener de document
+          premiosMenu.classList.toggle('hidden');
+          arrow.classList.toggle('rotate-180');
+      });
+
+    // Cierre al hacer clic fuera en escritorio
+    document.addEventListener('click', (event) => {
+        if (!premiosBtn.contains(event.target) && !premiosMenu.contains(event.target)) {
+            // CORRECCIÓN: Usar las mismas clases que en la apertura
+            premiosMenu.classList.add('hidden'); 
+            arrow.classList.remove('rotate-180');
+        }
+    });
+  }
+  
+  // --- Código Menú Móvil (Hamburguesa) ---
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuBtn && mobileNav) { // <-- AHORA SÍ ESTÁ ENVUELTO EN UN IF
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+
+
+  // --- Script para el submenú "Premios" en móvil (si existe en tu HTML móvil) ---
+  const premiosBtnm = document.getElementById('premios-btn-mobile');
+  const premiosMenum = document.getElementById('premios-menu-mobile');
+  const arrowm = document.getElementById('arrow-mobile'); // Asumo que este ID es diferente al del escritorio
+
+  if (premiosBtnm && premiosMenum && arrowm) {
+    premiosBtnm.addEventListener('click', () => {
+        premiosMenum.classList.toggle('hidden');
+        arrowm.classList.toggle('rotate-180');
+    });
+  }
+</script>
+
+
 </body>
 </html>
