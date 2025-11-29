@@ -61,7 +61,7 @@
 
 /* Columna 1 – izquierda */
 .sidebar {
-    width: 280px;
+    width: 300px;
     flex-shrink: 0;
     text-align: center;
 }
@@ -80,7 +80,7 @@
 
 /* Columna 3 – derecha */
 .sidebar-right {
-    width: 360px;       /* Aquí decides qué tan grande quieres las imágenes */
+    width: 450px;       /* Aquí decides qué tan grande quieres las imágenes */
     flex-shrink: 0;     /* No se encoge */
     text-align: center;
 }
@@ -103,6 +103,68 @@
     letter-spacing: 1px;
     border-top: 3px solid #e3e3e3;
 }
+ 
+/* ======== GALERÍA ======== */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .photo-card {
+     width: auto;
+     height: auto;
+     background: white;
+     border-radius: 12px;
+     border: 3px solid #ddd; 
+     overflow: hidden;
+     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+    
+      }
+
+    .photo-card:hover {
+      transform: translateY(-0.3vw);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.07);
+      filter: brightness(1.05);
+    }
+.caption-bar {
+    background: #222;              /* color de fondo de la franja */
+    color: #fff;                   /* texto blanco */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+/* Efecto al pasar el ratón por la tarjeta */
+  .photo-card:hover .caption-bar {
+    background: #444;
+    color: #f0f0f0;
+  }
+ 
+    
+
 
 /* ----------- MÓVIL / TABLET ----------- */
 @media (max-width: 1024px) {
@@ -125,14 +187,13 @@
     }
 
     /* Un poco más de espacio entre bloques */
-    .sidebar,
     .sidebar-right {
         margin-bottom: 25px;
     }
 
     /* Las imágenes se mantienen grandes y fluidas */
-    .sidebar-right img,
-    .sidebar img {
+    .sidebar-right img
+     {
         width: 100%;
         height: auto;
     }
@@ -254,9 +315,9 @@
     
     <!-- Columna 1 (Existente) -->
     <div class="sidebar columna">
-        <img src="img/Tormo Negro.jpg" alt="Tormo Negro">
+        <img src="Tormo_archivos/Tormo Negro.jpg" alt="Tormo Negro">
         <div class="caption">
-           <strong>Autor: Luis del Castillo</strong>
+           <strong>Autor : Luis del Castillo</strong>
         </div>
     </div>
  
@@ -267,10 +328,12 @@
         <div class="content columna">
             
             <p class="texto md:text-2xl">
+              
                   El premio <strong>Tormo Negro Masfarné</strong> es un premio literario otorgado por el Club de Lectura de <strong>Las Casas Ahorcadas</strong>
-                  de <strong>Cuenca</strong>. Se entrega anualmente durante la celebración del <strong>Festival Las Casas Ahorcadas</strong>.
+                  y patrocinado por la empresa de material eléctrico <strong>Masfarné</strong> de <strong>Cuenca</strong>. Se entrega anualmente durante la celebración del <strong>Festival Las Casas Ahorcadas</strong>.
             </p>
             <p class="texto md:text-2xl">
+              
                   Fue creado en 2011 como una forma de reconocer y promocionar la <strong>literatura negra</strong> de calidad. 
                   Desde su primera edición, ha logrado consolidarse como uno de los premios más importantes en el ámbito de la 
                   <strong>novela negra en España</strong>, por ser un premio concedido directamente por los lectores, el jurado más exigente.
@@ -285,15 +348,14 @@
         
         <!-- Columna 3 (Nueva columna, por ejemplo para la foto de Benzo y más texto) -->
         <div class="sidebar-right columna">
-          <img src="img/logos/Logo masfarne 2023.JPG" alt="Logo" class="masfarne-logo">
+          <img src="img/logos/Logo masfarne 2023.JPG" alt="Logo" class="sidebar-right">
             <div class="item">  
-                <img src="img/Fernando-Benzo.jpg" class="masfarne-logo">
+                <img src="Tormo_archivos/Tormo_2025.jpg" class="sidebar-right">
                 <div class="caption">
                     <strong>Fernando Benzo<br>
                     Ganador 2025</strong>
                 </div>
             </div>
-            
         </div>
         
     </div>
@@ -302,7 +364,27 @@
   <p class="texto_grande md:text-3xl">
    PREMIADOS AÑOS ANTERIORES
   </p>
-
+</div>  
+<!-- Primera línea-->
+  <div class="gallery bg-white">
+    <div class="photo-card">
+      <a href="#img1"><img src="Tormo_archivos/Tormo_2024.jpg" alt="Foto 1"></a>
+        <div class="caption-bar"><strong>Año 2024</strong></div>
+    </div>
+    <div class="photo-card">
+      <a href="#img2"><img src="Tormo_archivos/Tormo_2023.jpg" alt="Foto 2"></a>
+      <div class="caption-bar"><strong>Año 2023</strong></div>
+    </div>  
+    <div class="photo-card">
+      <a href="#img3"><img src="Tormo_archivos/Tormo_2022.jpg" alt="Foto 3"></a>
+      <div class="caption-bar"><strong>Año 2022</strong></div>
+    </div>
+    <div class="photo-card">
+      <a href="#img4"><img src="Tormo_archivos/Tormo_2021.jpg" alt="Foto 3"></a>
+      <div class="caption-bar"><strong>Año 2021</strong></div>
+    </div>
+  </div>
+<
 <footer></footer>
   <!-- JS para el menú hamburguesa y el menú-->
   <script>
