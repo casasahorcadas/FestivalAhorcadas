@@ -87,14 +87,28 @@
   }
 
     /* ======== RESPONSIVE ======== */
- @media (max-width: 480px) {
-      .photo-card {
-        width: 100%;
-      }
-      .photo-card img {
-        width: 100%;
-        height: auto;
-      } 
+ @media only screen and (max-width: 600px) {
+  .gallery {     /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
+    justify-content: center; /* Centra las tarjetas si es necesario */
+  }
+  
+  .photo-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 5px;
+    margin: 0 0 15px 0;
+  }
+  .photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.photo-card,
+.gallery {
+  overflow: visible !important;
+}
+}
+  
  }
   </style>
 </head>
