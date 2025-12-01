@@ -87,19 +87,14 @@
   }
 
     /* ======== RESPONSIVE ======== */
- @media only screen and (max-width: 600px) {
-  .gallery {
-    /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
-    justify-content: center; /* Centra las tarjetas si es necesario */
-  }
-  
-  .photo-card {
-    /* En móvil, cada tarjeta puede ocupar todo el ancho */
-    width: 100%;
-    margin: 0 0 15px 0; /* margen vertical únicamente */
-    padding: 5px;       /* padding sin encoger la imagen */  
-  }
-  
+ @media (max-width: 480px) {
+      .photo-card {
+        width: 100%;
+      }
+      .photo-card img {
+        width: 100%;
+        height: auto;
+      } 
  }
   </style>
 </head>
