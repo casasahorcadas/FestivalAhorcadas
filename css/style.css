@@ -16,3 +16,7 @@ img {
   display:none !important;
 }
 
+*{
+  box-sizing: border-box;
+}
+
