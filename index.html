@@ -54,12 +54,22 @@
     
     <!-- Navegación: botón hamburguesa en móvil -->
     <div class="mt-4 flex items-center justify-between">
-      <a href="img/Cuadriptico.pdf" target="_blank" rel="noopener noreferrer" class="inline-block">
+      <a href="programa.html" target="_blank" rel="noopener noreferrer" class="inline-block">
         <button class="bg-red-600 text-white font-semibold text-base md:text-2xl px-6 py-2 rounded-lg hover:bg-red-700 transition">
           Programa
         </button>
       </a>
+      <a href="img/Cartel_2026.jpg" target="_blank" rel="noopener noreferrer" class="inline-block">
+        <button class="bg-red-600 text-white font-semibold text-base md:text-2xl px-6 py-2 rounded-lg hover:bg-red-700 transition">
+          Cartel
+        </button>
+      </a>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
 
+      
       <!-- Botón hamburguesa -->
       <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
         <i class="fas fa-bars fa-lg"></i>
@@ -133,39 +143,43 @@
 
   
   <!-- FOOTER -->
-<footer class="flex flex-col md:flex-row items-start justify-between px-10 py-4 mt-10 gap-6 bg-white text-black">
+<footer class="flex flex-col md:flex-row items-start justify-between px-10 py-6 mt-10 bg-white text-black">
 
-  <!-- Contenedor en columna -->
+  <!-- Contenedor logos -->
   <div class="w-full flex flex-col gap-8">
 
     <!-- Patrocinan -->
-    <div class="w-full flex flex-wrap items-center justify-center gap-6">
-      <span class="colaboran font-bold text-xl md:text-xl whitespace-nowrap mr-4">
+    <div class="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+      <span class="colaboran font-bold text-lg md:text-xl whitespace-nowrap">
         Patrocinan:
       </span>
 
-      <img src="img/logos/1. Junta de Comunidades de Castilla-La Mancha.PNG" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/Logo_Junta_Quijote.png" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/Consorcio_color.jpg" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/2. Ayuntamiento.jpg" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/Logo Diputacion PNG.png" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/LOGO_COLOR_VISIO╠üN_Y_AUDICION_pastilla_CMYK.png" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/Logo masfarne 2023.JPG" class="h-16 md:h-20 object-contain" loading="lazy">
-      <img src="img/logos/4. Patronato.jpg" class="h-16 md:h-20 object-contain" loading="lazy">
+      <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        <img src="img/logos/1. Junta de Comunidades de Castilla-La Mancha.PNG" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Junta_Quijote.png" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Consorcio_color.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/2. Ayuntamiento.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo Diputacion PNG.png" class="h-14 md:h-18 object-contain" loading="lazy">
+        <img src="img/logos/LOGO_COLOR_VISIO╠üN_Y_AUDICION_pastilla_CMYK.png" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo masfarne 2023.JPG" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/4. Patronato.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+      </div>
     </div>
 
     <!-- Colaboran -->
-    <div class="w-full flex flex-wrap items-center justify-center gap-8">
-      <span class="colaboran font-bold text-xl md:text-2xl whitespace-nowrap mr-4">
+    <div class="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+      <span class="colaboran font-bold text-lg md:text-xl whitespace-nowrap">
         Colaboran:
       </span>
 
-      <img src="img/logos/1. UCLM.jpg" class="h-14 md:h-18 object-contain" loading="lazy">
-      <img src="img/logos/mupa def.jpg" class="h-14 md:h-18 object-contain" loading="lazy">
-      <img src="img/logos/3. SERcuenca.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
-      <img src="img/logos/Logo_TV.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
-      <img src="img/logos/Logo_Toro.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
-      <img src="img/logos/Logo_Graficas.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+      <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        <img src="img/logos/1. UCLM.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/mupa def.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/3. SERcuenca.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_TV.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Toro.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Graficas.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+      </div>
     </div>
 
   </div>
