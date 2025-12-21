@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival de Novela Negra 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente tipo máquina de escribir -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" href="img/Logo.jpg">
+
+  <style>
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
+    }
+  /* ======== GALERÍA ======== */
+    .galeria-completa-wrapper {
+      background-color: white;
+      padding: 5px; /* Añade algo de espacio alrededor de las fotos */
+  }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Distribuye el espacio uniformemente */
+      gap:20px;
+      margin: 0 !important;
+      padding: 0 !important;
+               }
+
+    .photo-card {
+    /* En escritorio (3 columnas), cada tarjeta ocupará aproximadamente un tercio del ancho */
+       width: calc(25% -10px); /* Ajusta el 10px según el espacio deseado entre fotos */
+       margin: 20px;
+       
+      }
+
+    .photo-card:hover {
+      transform: translateY(-0.3vw);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.01);
+      filter: brightness(1.05);
+    }
+
+    
+  .caption-bar {
+    background: #222;              /* color de fondo de la franja */
+    color: #fff;                   /* texto blanco */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+/* Efecto al pasar el ratón por la tarjeta */
+  .photo-card:hover .caption-bar {
+    background: #444;
+    color: #f0f0f0;
+  }
+
+    /* ======== RESPONSIVE ======== */
+ @media only screen and (max-width: 600px) {
+  .gallery {     /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
+    justify-content: center; /* Centra las tarjetas si es necesario */
+  }
+  
+  .photo-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 5px;
+    margin: 0 0 15px 0;
+  }
+  .photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.photo-card,
+.gallery {
+  overflow: visible !important;
+}
+}
+  </style>
+</head>
+
+
+<body class="bg-black text-white">
+
+<header>
+     <!-- Contenedor del logo y el título -->
+<header class="px-8 py-4 max-w-8xl mx-auto">
+     
+  <div class="flex flex-wrap justify-between px-8 py-4 relative">
+
+    <!-- Logo izquierda -->
+    <div class="flex-shrink-0">
+      <img 
+        src="img/Logo.jpg"
+        alt="Logo del Club"
+        class="w-40 h-40 object-contain"
+      />
+    </div>
+
+    <!-- Texto centrado -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl text-white leading-tight">
+        FESTIVAL INTERNACIONAL <br>
+        <span class="text-red-500 md:text-2xl">
+          DE NOVELA NEGRA Y CRIMINAL
+        </span>
+      </h1>
+    </div>
+
+    <!-- Redes derecha -->
+    <div class="flex justify-items-center gap-4 text-2xl">
+
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" 
+         target="_blank" class="text-white hover:text-blue-500">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/lascasasahorcadas/" 
+         target="_blank" class="text-white hover:text-pink-500">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://x.com/CasasAhorcadas" 
+         target="_blank" class="text-white hover:text-sky-400">
+        <i class="fab fa-x-twitter fa-lg"></i>
+      </a>
+    </div>
+  </div>
+  <div class="flex justify-end items center">
+  <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+
+       <!-- Menú principal -->
+      <nav id="main-nav" class="hidden md:block mt-4">
+        <ul class="flex md:flex-row flex-col gap-6 text-lg">
+            <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
+            <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
+            <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
+            <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
+
+      <!-- PREMIOS con desplegable -->
+            <li class="relative">
+              <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
+                Premios
+                <span id="arrow" class="transition-transform">▼</span>
+              </button>
+            <!-- Submenú desplegable -->
+                <ul id="premios-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40">
+                  <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
+                  <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
+                </ul>
+            </li>
+            <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
+            <li><a href="Homenaje.html" class="hover:text-red-500">In memoriam</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Menú mobile desplegable -->
+  <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
+    <ul class="flex flex-col gap-2 text-base">
+      <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
+      <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+      <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+      <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
+    <!-- PREMIOS con desplegable para móvil -->
+      <li class="relative">
+        <button id="premios-btn-mobile" class="block px-3 py-2 rounded hover:bg-white/5 flex items-center gap-2 w-full text-left">
+          Premios
+          <span id="arrow-mobile" class="transition-transform">▼</span>
+        </button>
+        <!-- Submenú desplegable móvil -->
+        <ul id="premios-menu-mobile" class="hidden mt-1 bg-white/10 shadow-inner rounded-md py-1 text-sm ml-4">
+          <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-white/20">Tormo Negro</a></li>
+          <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-white/20">Bevilacqua</a></li>
+        </ul>
+      </li>
+    <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
+    <li><a href="Homenaje.html" class="hover:text-red-500">In memoriam</a></li>
+    </ul>
+  </nav>
+ </div> 
+</header>
+
+
+<!----- GALERÍA DE IMÁGENES --->
+
+<div class="galeria-completa-wrapper"> 
+  <div class="gallery">
+    <div class="photo-card">
+      <div class="item">
+        <img src="Homenaje_archivos/Ravelo_1.jpg" onclick="location.href='homenaje_s.html?set=1&img=1'">
+        <div class="caption-bar">Alexis Ravelo</div>
+      </div>
+    </div>
+    <div class="photo-card">  
+      <div class="item">
+        <img src="Homenaje_archivos/Domingo.jpg" onclick="location.href='homenaje_s.html?set=2&img=1'">
+        <div class="caption-bar">Domingo Villar</div>
+      </div>
+    </div>  
+    
+  </div>
+
+</div>
+
+</html>
