@@ -24,20 +24,6 @@
       .site-title { font-size: 1.15rem; }
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
-      .home {
-      position: fixed;
-      top: 80px;
-      right: 80px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      padding: 10px 14px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 32px;
-    }
-    .home:hover {
-      background: rgba(255,0,0,0.8);
-    }
     img {
       max-width: 100%;
       max-height: 100%;
@@ -171,8 +157,36 @@
          target="_blank" class="text-white hover:text-sky-400">
         <i class="fab fa-x-twitter fa-lg"></i>
       </a>
-       <!-- Botón volver a inicio -->
-      <a href="anteriores.html" class="home" onclick="history.back();">🏠</a>
+    <!-- Botón volver a inicio -->
+      <a
+       href="#"
+       onclick="history.back(); return false;"
+       class="
+        fixed
+        top-5 right-5
+        md:top-32 md:right-10
+        z-50
+        bg-red-600
+        p-4
+        rounded-full
+        shadow-lg
+        hover:bg-red-700
+        transition
+      "
+      title="Volver"
+      >
+      <svg
+        viewBox="0 0 24 24"
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      </a>
     </div>
 
     </div>
