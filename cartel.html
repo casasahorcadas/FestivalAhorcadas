@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cartel 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       margin: 0;
@@ -13,20 +14,6 @@
       align-items: center;
       height: 100vh;
     }
-    .home {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      padding: 10px 14px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 32px;
-    }
-    .home:hover {
-      background: rgba(255,0,0,0.8);
-    }
     img {
       max-width: 100%;
       max-height: 100%;
@@ -35,8 +22,22 @@
 </head>
 <body>
 
-  <!-- Botón volver a inicio -->
-  <a href="index.html" class="home" title="Volver a inicio">🏠</a>
+ <a
+  href="#"
+  onclick="history.back(); return false;"
+  class="fixed top-5 right-5 z-[9999] bg-red-600 p-4 rounded-full"
+>
+  <svg
+    viewBox="0 0 24 24"
+    class="w-10 h-10 text-white"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path d="M15 18l-6-6 6-6" />
+  </svg>
+</a>
+
 
   <!-- Cartel -->
   <img src="img/Cartel_2026.jpg" alt="Cartel 2026">
