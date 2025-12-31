@@ -27,6 +27,16 @@
     .enlaces-prensa li {
     line-height: 2;
     }
+    .caption {
+    background:red;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    border-top: 1px solid #e3e3e3;
+}
+
     
 </style>
 </head>
@@ -71,6 +81,36 @@
          target="_blank" class="text-white hover:text-sky-400">
         <i class="fab fa-x-twitter fa-lg"></i>
       </a>
+      <!-- Botón volver a inicio -->
+      <a
+       href="#"
+       onclick="history.back(); return false;"
+       class="
+        fixed
+        top-5 right-5
+        md:top-32 md:right-10
+        z-50
+        bg-red-600
+        p-4
+        rounded-full
+        shadow-lg
+        hover:bg-red-700
+        transition
+      "
+      title="Volver"
+      >
+      <svg
+        viewBox="0 0 24 24"
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      </a>  
     </div>
   </div>
   <div class="flex justify-end items center">
@@ -130,41 +170,63 @@
   </nav>
  </div> 
 </header>
-<div class="ml-10 mt-10">
- <ul class="enlaces-prensa">
-        <li> 👉
-            <a href="https://www.vocesdecuenca.com/culturayvida/rosa-montero-estara-en-el-proximo-festival-de-novela-negra-las-casas-ahorcadas-de-cuenca/" 
-            class="text-white-500 font-bold hover:text-red-400" target="blank">
-                https://www.vocesdecuenca.com/culturayvida/rosa-montero-estara-en-el-proximo-festival-de-novela-negra-las-casas-ahorcadas-de-cuenca/
-            </a>
-        </li>
-        <li> 👉
-            <a href="https://ociocuenca.es/homenaje-a-rosa-montero-en-la-proxima-edicion-del-festival-de-las-casas-ahorcadas/" 
-            class="text-whi-500 font-bold hover:text-red-400" target="blank">
-                https://ociocuenca.es/homenaje-a-rosa-montero-en-la-proxima-edicion-del-festival-de-las-casas-ahorcadas/
-            </a>
-        </li>
-        <li> 👉
-            <a href="https://www.cuencanews.es/noticia/110633/cuenca/rosa-montero-sera-homenajeada-en-el-festival-de-las-casas-ahorcadas-2026.html" 
-            class="text-white-500 font-bold hover:text-red-400" target="blank" >
-                https://www.cuencanews.es/noticia/110633/cuenca/rosa-montero-sera-homenajeada-en-el-festival-de-las-casas-ahorcadas-2026.html
-            </a>
-        </li>
-        <li> 👉
-        <a href="https://www.liberaldecastilla.com/beatriz-oses-la-reina-del-thriller-infantil-y-juvenil-tambien-estara-en-el-festival-de-las-casas-ahorcadas/"
-           class="text-white-500 font-bold hover:text-red-400" target="blank">
-            https://www.liberaldecastilla.com/beatriz-oses-la-reina-del-thriller-infantil-y-juvenil-tambien-estara-en-el-festival-de-las-casas-ahorcadas/
-        </a>
-        </li>
-        <li> 👉
-        <a href="https://www.cuencanews.es/noticia/110774/cuenca/beatriz-oses-participara-en-el-xiii-festival-de-novela-criminal-de-las-casas-ahorcadas-de-cuenca.html"
-           class="text-white-500 font-bold hover:text-red-400" target="blank">
-            https://www.cuencanews.es/noticia/110774/cuenca/beatriz-oses-participara-en-el-xiii-festival-de-novela-criminal-de-las-casas-ahorcadas-de-cuenca.html
-        </a>
-        </li>
-    
-</ul>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ml-10 mt-10">
+<!-- BEATRIZ OSÉS -->
+<div class="flex items-center gap-4">
+  <div class="text-center">
+    <img 
+      src="Prensa_archivos/Beatriz Osés.jpg"
+      alt="Beatriz Osés"
+      class="w-40 h-40 object-contain mx-auto"
+    />
+    <div class="caption text-white mt-2 font-bold">
+      Beatriz Osés
+    </div>
+  </div>
 
+  <ul class="enlaces-prensa space-y-2 text-left">
+    <li>👉 <a href="#" class="text-white font-bold hover:text-red-400">Liberal de Castilla</a></li>
+    <li>👉 <a href="#" class="text-white font-bold hover:text-red-400">Cuenca News</a></li>
+  </ul>
+</div>
+
+<!-- ROSA MONTERO -->
+<div class="flex items-center gap-4">
+  <div class="text-center">
+    <img 
+      src="Prensa_archivos/Rosa_Montero.jpg"
+      alt="Rosa Montero"
+      class="w-40 h-40 object-contain mx-auto"
+    />
+    <div class="caption text-white mt-2">
+      <strong>Rosa Montero</strong>
+    </div>
+  </div> 
+    <ul class="enlaces-prensa space-y-2">
+      <li>👉
+        <a href="https://www.vocesdecuenca.com/culturayvida/rosa-montero-estara-en-el-proximo-festival-de-novela-negra-las-casas-ahorcadas-de-cuenca/"
+           class="text-white font-bold hover:text-red-400"
+           target="_blank">
+          Voces de Cuenca
+        </a>
+      </li>
+      <li>👉
+        <a href="https://ociocuenca.es/homenaje-a-rosa-montero-en-la-proxima-edicion-del-festival-de-las-casas-ahorcadas/"
+           class="text-white font-bold hover:text-red-400"
+           target="_blank">
+          Ocio Cuenca
+        </a>
+      </li>
+      <li>👉
+        <a href="https://www.cuencanews.es/noticia/110633/cuenca/rosa-montero-sera-homenajeada-en-el-festival-de-las-casas-ahorcadas-2026.html"
+           class="text-white font-bold hover:text-red-400"
+           target="_blank">
+          Cuenca News
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 </div>
 <!-- FOOTER -->
 <footer>

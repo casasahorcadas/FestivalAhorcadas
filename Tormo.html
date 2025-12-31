@@ -514,7 +514,31 @@
         arrowm.classList.toggle('rotate-180');
     });
   }
+  const btnUp = document.getElementById('btnUp');
+  const btnDown = document.getElementById('btnDown');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    // Flecha ARRIBA: aparece cuando bajas
+    if (scrollTop > 100) {
+      btnUp.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      btnUp.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    // Flecha ABAJO: desaparece al llegar al final
+    if (scrollTop + windowHeight < docHeight - 100) {
+      btnDown.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      btnDown.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
 </script>
+
+
 
 
 </body>
