@@ -113,14 +113,12 @@
 
 <body class="bg-black text-white">
 
-<header>
-     <!-- Contenedor del logo y el título -->
+  <!-- HEADER -->
 <header class="px-8 py-4 max-w-8xl mx-auto">
-     
-  <div class="flex flex-wrap justify-between px-8 py-4 relative">
+  <div class="grid grid-cols-1 md:grid-cols-3 items-center px-8 py-4 relative">
 
     <!-- Logo izquierda -->
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 flex justify-center md:justify-start">
       <img 
         src="img/Logo.jpg"
         alt="Logo del Club"
@@ -131,116 +129,31 @@
     <!-- Texto centrado -->
     <div class="text-center">
       <h1 class="text-lg md:text-2xl text-white leading-tight">
-        FESTIVAL INTERNACIONAL <br>
+        XIII FESTIVAL INTERNACIONAL <br>
         <span class="text-red-500 md:text-2xl">
-          DE NOVELA NEGRA Y CRIMINAL
+          DE NOVELA NEGRA Y CRIMINAL<br>
+          PROGRAMA
         </span>
       </h1>
     </div>
 
     <!-- Redes derecha -->
-    <div class="flex justify-items-center gap-4 text-2xl">
-
-      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES" 
+    <div class="flex justify-center md:justify-end gap-4 text-2xl md:pr-8">
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES"
          target="_blank" class="text-white hover:text-blue-500">
         <i class="fab fa-facebook fa-lg"></i>
       </a>
-      <a href="https://www.instagram.com/lascasasahorcadas/" 
+      <a href="https://www.instagram.com/lascasasahorcadas/"
          target="_blank" class="text-white hover:text-pink-500">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <a href="https://x.com/CasasAhorcadas" 
+      <a href="https://x.com/CasasAhorcadas"
          target="_blank" class="text-white hover:text-sky-400">
         <i class="fab fa-x-twitter fa-lg"></i>
       </a>
-    <!-- Botón volver a inicio -->
-      <a
-       href="#"
-       onclick="history.back(); return false;"
-       class="
-        fixed
-        top-5 right-5
-        md:top-32 md:right-10
-        z-50
-        bg-red-600
-        p-4
-        rounded-full
-        shadow-lg
-        hover:bg-red-700
-        transition
-      "
-      title="Volver"
-      >
-      <svg
-        viewBox="0 0 24 24"
-        class="w-8 h-8 text-white"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M15 18l-6-6 6-6" />
-      </svg>
-      </a>
     </div>
+
   </div>
-  <div class="flex justify-end items center">
-  <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-        <i class="fas fa-bars fa-lg"></i>
-      </button>
-
-       <!-- Menú principal -->
-      <nav id="main-nav" class="hidden md:block mt-4">
-        <ul class="flex md:flex-row flex-col gap-6 text-lg">
-            <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
-            <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
-            <li><a href="el festival.html" class="hover:text-red-500">El Festival</a></li>
-            <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
-
-      <!-- PREMIOS con desplegable -->
-            <li class="relative">
-              <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
-                Premios
-                <span id="arrow" class="transition-transform">▼</span>
-              </button>
-            <!-- Submenú desplegable -->
-                <ul id="premios-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40">
-                  <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
-                  <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
-                </ul>
-            </li>
-            <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
-            <li><a href="Homenaje.html" class="hover:text-red-500">In memoriam</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Menú mobile desplegable -->
-  <nav id="mobile-nav" class="md:hidden hidden mt-3" aria-hidden="true">
-    <ul class="flex flex-col gap-2 text-base">
-      <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
-      <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
-      <li><a href="el festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
-      <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
-    <!-- PREMIOS con desplegable para móvil -->
-      <li class="relative">
-        <button id="premios-btn-mobile" class="block px-3 py-2 rounded hover:bg-white/5 flex items-center gap-2 w-full text-left">
-          Premios
-          <span id="arrow-mobile" class="transition-transform">▼</span>
-        </button>
-        <!-- Submenú desplegable móvil -->
-        <ul id="premios-menu-mobile" class="hidden mt-1 bg-white/10 shadow-inner rounded-md py-1 text-sm ml-4">
-          <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-white/20">Tormo Negro</a></li>
-          <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-white/20">Bevilacqua</a></li>
-        </ul>
-      </li>
-    <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
-    <li><a href="Homenaje.html" class="block px-3 py-2 rounded hover:bg-white/5">In memoriam</a></li>
-    </ul>
-  </nav>
- </div> 
 </header>
 
 
@@ -263,57 +176,36 @@
     
   </div>
 
-<!-- JS para el menú hamburguesa y el menú-->
-  <script>
-  // --- Código Menú Escritorio (Premios) ---
-  const premiosBtn = document.getElementById('premios-btn');
-  const premiosMenu = document.getElementById('premios-menu');
-  // NOTA: Si 'arrow' es el mismo elemento en móvil y escritorio, puede dar problemas.
-  // Asumiré que en el HTML de escritorio su ID es 'arrow'.
-  const arrow = document.getElementById('arrow'); 
-
-  if (premiosBtn && premiosMenu && arrow) {
-      premiosBtn.addEventListener('click', (event) => {
-          event.stopPropagation(); // Evita que se cierre inmediatamente por el listener de document
-          premiosMenu.classList.toggle('hidden');
-          arrow.classList.toggle('rotate-180');
-      });
-
-    // Cierre al hacer clic fuera en escritorio
-    document.addEventListener('click', (event) => {
-        if (!premiosBtn.contains(event.target) && !premiosMenu.contains(event.target)) {
-            // CORRECCIÓN: Usar las mismas clases que en la apertura
-            premiosMenu.classList.add('hidden'); 
-            arrow.classList.remove('rotate-180');
-        }
-    });
-  }
-  
-  // --- Código Menú Móvil (Hamburguesa) ---
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  if (menuBtn && mobileNav) { // <-- AHORA SÍ ESTÁ ENVUELTO EN UN IF
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-
-
-  // --- Script para el submenú "Premios" en móvil (si existe en tu HTML móvil) ---
-  const premiosBtnm = document.getElementById('premios-btn-mobile');
-  const premiosMenum = document.getElementById('premios-menu-mobile');
-  const arrowm = document.getElementById('arrow-mobile'); // Asumo que este ID es diferente al del escritorio
-
-  if (premiosBtnm && premiosMenum && arrowm) {
-    premiosBtnm.addEventListener('click', () => {
-        premiosMenum.classList.toggle('hidden');
-        arrowm.classList.toggle('rotate-180');
-    });
-  }
-</script>
 </div>
-
+<!-- Botón volver a inicio -->
+      <a
+       href="#"
+       onclick="history.back(); return false;"
+       class="
+        fixed
+        top-5 right-5
+        md:top-32 md:right-5
+        z-50
+        bg-red-600
+        p-4
+        rounded-full
+        shadow-lg
+        hover:bg-red-700
+        transition
+      "
+      title="Volver"
+      >
+      <svg
+        viewBox="0 0 24 24"
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      </a>
+</body>
 </html>
