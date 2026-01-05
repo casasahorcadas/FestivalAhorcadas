@@ -70,6 +70,28 @@
       transform: scale(1.01);
       filter: brightness(1.05);
     }
+.item {
+  width: 100%;
+  max-width: 900px;   /* más ancha en desktop */
+  height: 180px;      /* móvil */
+  overflow: hidden;
+  margin: 0 auto;     /* centra la imagen */
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* recorta la parte superior */
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .item {
+    height: 250px;
+  }
+}
+
 
     
   .caption-bar {
@@ -173,19 +195,47 @@
     <div class="photo-card">
       <div class="item">
         <img src="img/Programa/miercoles_m_2.jpg">
-        
       </div>
     </div> 
     <div class="photo-card">
       <div class="item">
-        <img src="img/Programa/miercoles_m_2.jpg">
+        <img src="img/Programa/miercoles_m_3.jpg">
         
       </div>
     </div>
     <div class="photo-card">
       <div class="item">
-        <img src="img/Programa/miercoles_m_2.jpg">
-        
+        <img src="img/Programa/Jueves_m_1.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Jueves_m_2.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Jueves_m_3.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Viernes_m_1.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Viernes_m_2.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Viernes_m_3.jpg">
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <img src="img/Programa/Sabado_m_1.jpg">
       </div>
     </div>  
   </div>
