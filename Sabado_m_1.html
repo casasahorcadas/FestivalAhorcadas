@@ -24,124 +24,133 @@
       .site-title { font-size: 1.15rem; }
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  /* ======== GALERÍA ======== */
-    .galeria-completa-wrapper {
+    .texto_completo{
       background-color: white;
-      padding: 5px; /* Añade algo de espacio alrededor de las fotos */
-  }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between; /* Distribuye el espacio uniformemente */
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding: 0 !important;
-      margin-bottom: 20px;
-      margin-top: 20px;
-         }
-
-    .photo-card {
-    /* En escritorio (3 columnas), cada tarjeta ocupará aproximadamente un tercio del ancho */
-       width: 30%; /* Ajusta el 10px según el espacio deseado entre fotos */
-       margin-left: 20px;
-       margin-right: 20px;
-       margin-bottom: 5px; /* Espaciado inferior para separar las tarjetas */
-      }
-
-    .photo-card:hover {
-      transform: translateY(-0.3vw);
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+      color:black;
     }
-
-    .photo-card img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-      cursor: pointer;
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .photo-card img:hover {
-      transform: scale(1.01);
-      filter: brightness(1.05);
-    }
-.item {
-  width: 100%;
-  max-width: 1200px;  /* MÁS ANCHA en desktop */
-  height: 300px;      /* móvil */
-  overflow: hidden;
-  margin: 0 auto;
+    
+/* El contenedor principal usa flexbox para organizar sus hijos */
+/* Contenedor general en dos columnas */
+.dos-columnas-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 80px;
 }
 
-.item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
+/* Todas las columnas comparten base */
+.columna {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Desktop */
-@media (min-width: 768px) {
-  .item {
-    height: 350px;   /* más alta tipo banner */
-  }
+
+/* Columna 1  – texto principal */
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 5px;
+    
 }
 
-/* Franja de texto sobre la imagen */
-  .caption-bar {
-    background: #222;              /* color de fondo de la franja */
-    color: #fff;                   /* texto blanco */
-    text-align: center;
-    font-weight: 500;
+.content {
+    flex:1;     
+    max-width: 800px;       /* Permite que se reduzca correctamente */
+}
+.content_h1 {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.content_h2 {
     font-size: 1rem;
-    padding: 10px 0;
-    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
-    transition: background 0.3s ease, color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    background-color: #e50914;
+    color: white;
+     /* 1. Convierte el bloque en línea para que el fondo siga al texto */
+    display: inline-block;
+    max-width: 550px;
+    
+    /* 2. Controla el espacio entre líneas para cerrar el hueco blanco */
+    line-height: 1.5; 
+    
+    /* 3. Clonar el diseño en cada salto de línea */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    
+    /* 4. El truco: box-shadow del mismo color para rellenar espacios */
+    padding: 0.6rem 0;
+    box-shadow: 0.5rem 0 0 #e50914, -0.5rem 0 0 #e50914;
+    margin-bottom: 10px;
+        
+}
+@media (max-width: 640px) {
+  .content_h2 {
+    max-width: 100%;
+    font-size: 0.95rem;
   }
+}
+.content_h3 {
+    font-size: 1rem;
+    color: red;
+    margin-bottom: 5px;    
+}
 
-/* Efecto al pasar el ratón por la tarjeta */
-  .photo-card:hover .caption-bar {
-    background: #444;
-    color: #f0f0f0;
-  }
+/* Columna 2 – centro */
+/* Columna 2 – centro */
+.sidebar {
+       flex:1;     
+    max-width: 30%;       /* Permite que se reduzca correctamente */
+}
+   /*  */
+.only-desktop {
+  display: none !important;
+}
 
-    /* ======== RESPONSIVE ======== */
- @media only screen and (max-width: 600px) {
-  .gallery {     /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
-    justify-content: center; /* Centra las tarjetas si es necesario */
+@media (min-width: 1024px) {
+  .only-desktop {
+    display: flex !important;
   }
-  
-  .photo-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 5px;
-    margin: 0 0 15px 0;
-  }
-  .photo-card img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
-.photo-card,
-.gallery {
-  overflow: visible !important;
+
+/* ----------- MÓVIL / TABLET ----------- */
+@media (max-width: 1024px) {
+    
+    /* Las columnas pasan a estar una debajo de la otra */
+    .dos-columnas-layout {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    /* Las columnas se estiran a ancho completo del móvil */
+    
+    .content,
+    .sidebar
+   {
+        max-width: 100%;
+    }
+
+   
 }
-}
-  </style>
+.texto {
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 1px;
+      margin-right: 10px;
+    }
+
+   
+
+ </style>
 </head>
-
-
 <body class="bg-black text-white">
-
-<!-- HEADER -->
-<header class="px-8 py-4 max-w-8xl mx-auto">
+  
+  <!-- HEADER -->
+<header class="px-8 py-4 max-w-8xl mx-auto bg-black">
   <div class="grid grid-cols-1 md:grid-cols-3 items-center px-8 py-4 relative">
 
     <!-- Logo izquierda -->
@@ -158,7 +167,7 @@
       <h1 class="text-lg md:text-2xl text-white leading-tight">
         XIII FESTIVAL INTERNACIONAL <br>
         <span class="text-red-500 md:text-2xl">
-          DE NOVELA NEGRA Y CRIMINAL - 2026
+          DE NOVELA NEGRA Y CRIMINAL
         </span>
       </h1>
     </div>
@@ -180,70 +189,43 @@
     </div>
 
   </div>
-   <!-- BOTÓN PDF AÑADIDO AQUÍ PARA MÁXIMA VISIBILIDAD -->
-  <div class="flex justify-center mt-6">
-    <a href="img/2025/Cuadriptico 2025.pdf" download class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors font-bold text-sm">
-      <i class="fas fa-download"></i> DESCARGAR PROGRAMA
-    </a>
-  </div>
 </header>
 
-<!----- GALERÍA DE IMÁGENES --->
+<!-- FESTIVAL TARDES -->
+ <div class="texto_completo">
+  <!--- Ponemos Texto con la foto del Tormo y el logo de Masfarné--->
+    <div class="container dos-columnas-layout">
+  
+  <!--Miércoles  -->
+  
+      <!-- Columna 1  -->
+      <div class="content columna">
+          
+        <h1 class="content_h1 md:text-3xl">
+              <strong>SÁBADO 7 DE FEBRERO </strong><br>
+        </h1>
+        <h3 class="content_h3 md:text-2xl">
+          <strong>CASCO ANTIGUO DE CUENCA</strong>
+        </h3>
 
-<div class="galeria-completa-wrapper"> 
-  <div class="gallery">
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Miercoles_t_1.jpg" onclick="location.href='Miercoles_t_1.html'">
-      </div>
-    </div>
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Miercoles_t_2.jpg" onclick="location.href='Miercoles_t_2.html'">
-      </div>
-    </div> 
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Miercoles_t_3.jpg" onclick="location.href='Miercoles_t_3.html'">     
-      </div>
-    </div>
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Jueves_t_1.jpg" onclick="location.href='Jueves_t_1.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Jueves_t_2.jpg" onclick="location.href='Jueves_t_2.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Jueves_t_3.jpg" onclick="location.href='Jueves_t_3.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Viernes_t_1.jpg" onclick="location.href='Viernes_t_1.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Viernes_t_2.jpg" onclick="location.href='Viernes_t_2.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Viernes_t_3.jpg" onclick="location.href='Viernes_t_3.html'">
-      </div>
-    </div>  
-    <div class="photo-card">
-      <div class="item">
-        <img src="img/Programa/Sabado_m_1.jpg" onclick="location.href='Sabado_m_1.html'">
-      </div>
-    </div>  
-  </div>
-  <!-- FOOTER -->
+         <p class="texto md:text-2xl ">
+           <strong>11:00: Encuentro internacional en la Casa del Corregidor con Gianrico Carofiglio. <br>
+            </strong>
+          </p>  
+           <p class="texto md:text-2xl text-justify py-2 "> 
+           ¿Tu perro se llama Mason? No te pierdas el encuentro con este antiguo fiscal antimafia y creador de la serie del abogado Guido Guerrieri.
+        </p>
+      </div> <!-- Cierra content columna-->
+       <!-- Columna 2  -->
+        <div class="sidebar columna">
+            <img src="img/Programa/Sabado_m_1.jpg">
+        
+        </div> <!-- Cierra content columna-->
+  
+  </div> <!-- Cierra container dos columnas layout-->
+
+
+ <!-- FOOTER -->
 <footer class="flex flex-col md:flex-row items-start justify-between px-10  mt-10 bg-white text-black">
 
   <!-- Contenedor logos -->
@@ -286,8 +268,8 @@
   </div>
 
 </footer>
-</div>
-<!-- Botón volver a inicio -->
+</div> <!-- Cierra texto completo-->
+      <!-- Botón volver a inicio -->
       <a
        href="#"
        onclick="history.back(); return false;"
@@ -317,5 +299,5 @@
         <path d="M15 18l-6-6 6-6" />
       </svg>
       </a>
- </body>
+</body>
 </html>
