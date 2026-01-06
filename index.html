@@ -95,8 +95,7 @@
                 </ul>
             </li>
             <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
-
-          <!-- PREMIOS con desplegable -->
+            <!-- PREMIOS con desplegable -->
             <li class="relative">
               <button id="premios-btn" class="hover:text-red-500 flex items-center gap-2">
                 Premios
@@ -119,7 +118,21 @@
     <ul class="flex flex-col gap-2 text-base">
       <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
       <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
-      <li><a href="Festival.html" class="block px-3 py-2 rounded hover:bg-white/5">El Festival</a></li>
+    <!-- FESTIVAL con desplegable para móvil -->
+      <li class="relative">
+        <button id="premios-btn-mobile" class="block px-3 py-2 rounded hover:bg-white/5 flex items-center gap-2 w-full text-left">
+          Festival
+          <span id="arrow-mobile" class="transition-transform">▼</span>
+        </button>
+        <!-- Submenú desplegable móvil -->
+        <ul id="premios-menu-mobile" class="hidden mt-1 bg-white/10 shadow-inner rounded-md py-1 text-sm ml-4">
+          <li><a href="Festival.html" class="block px-4 py-2 hover:bg-white/20">Presentación</a></li>
+          <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-white/20">Miércoles</a></li>
+          <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-white/20">Jueves</a></li>
+          <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-white/20">Viernes</a></li>
+          <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-white/20">Sábado</a></li>
+        </ul>
+      </li>  
       <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
     <!-- PREMIOS con desplegable para móvil -->
       <li class="relative">
