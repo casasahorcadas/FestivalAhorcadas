@@ -68,15 +68,15 @@
         Cartel
       </a>
 
-    <!-- BOTÓN HAMBURGUESA MOBILE -->
-<button id="menu-btn" class="md:hidden px-3 py-2 text-white bg-red-500 rounded">
-  ☰ Menú
-</button>
+      <!-- Botón hamburguesa -->
+      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
 
 <!-- MENÚ MOBILE / DESKTOP -->
 <nav>
   <!-- MOBILE NAV -->
-  <ul id="mobile-nav" class="md:hidden hidden mt-3 bg-zinc-900 p-4 flex flex-col gap-2 text-base">
+  <ul id="mobile-nav" class=" md:hidden hidden mt-3 flex flex-col gap-2 text-base">
     <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
     <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
 
@@ -148,7 +148,58 @@
   </ul>
 </nav>
 
+<!-- JS RESPONSIVE -->
+<script>
+  // BOTÓN HAMBURGUESA
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  if(menuBtn && mobileNav){
+    menuBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      mobileNav.classList.toggle('hidden');
+    });
+  }
 
+  // FUNCIONES DROPDOWN
+  function toggleDropdown(btnId, menuId, isMobile=false){
+    const btn = document.getElementById(btnId);
+    const menu = document.getElementById(menuId);
+    if(!btn || !menu) return;
+    const arrow = btn.querySelector('.arrow');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if(!isMobile) closeAllMenus();
+      menu.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
+    });
+  }
+
+  function closeAllMenus(){
+    ['fest-menu','prem-menu','fest-menu-mob','prem-menu-mob'].forEach(id=>{
+      const menu = document.getElementById(id);
+      if(menu) menu.classList.add('hidden');
+    });
+    document.querySelectorAll('.arrow').forEach(a=>a.classList.remove('rotate-180'));
+  }
+
+  // PREVENIR CIERRE AL HACER CLICK DENTRO DE MOBILE NAV
+  mobileNav?.addEventListener('click', e => e.stopPropagation());
+
+  // CERRAR AL HACER CLICK FUERA
+  document.addEventListener('click', e=>{
+    if(!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')){
+      closeAllMenus();
+    }
+  });
+
+  // ACTIVAR DROPDOWNS
+  toggleDropdown('fest-btn-mob','fest-menu-mob',true);
+  toggleDropdown('prem-btn-mob','prem-menu-mob',true);
+  toggleDropdown('fest-btn','fest-menu');
+  toggleDropdown('prem-btn','prem-menu');
+</script>
+
+  </div> 
 </header>
 
   <!-- Encabezado principal -->
@@ -212,55 +263,73 @@
 
 </footer>
 
-<!-- JS RESPONSIVE -->
+
+
+  <!-- JS para el menú hamburguesa y el menú-->
 <script>
-  // BOTÓN HAMBURGUESA
+  // ===== MENÚ HAMBURGUESA =====
   const menuBtn = document.getElementById('menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
-  if(menuBtn && mobileNav){
-    menuBtn.addEventListener('click', e => {
+
+  if (menuBtn && mobileNav) {
+    menuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       mobileNav.classList.toggle('hidden');
     });
   }
 
-  // FUNCIONES DROPDOWN
-  function toggleDropdown(btnId, menuId, isMobile=false){
+  // ===== DROPDOWNS =====
+  function toggleDropdown(btnId, menuId, isMobile = false) {
     const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
-    if(!btn || !menu) return;
+    if (!btn || !menu) return;
+
     const arrow = btn.querySelector('.arrow');
-    btn.addEventListener('click', e => {
+
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if(!isMobile) closeAllMenus();
+
+      if (!isMobile) {
+        closeAllMenus(); // SOLO desktop
+      }
+
       menu.classList.toggle('hidden');
       arrow?.classList.toggle('rotate-180');
     });
   }
 
-  function closeAllMenus(){
-    ['fest-menu','prem-menu','fest-menu-mob','prem-menu-mob'].forEach(id=>{
-      const menu = document.getElementById(id);
-      if(menu) menu.classList.add('hidden');
-    });
-    document.querySelectorAll('.arrow').forEach(a=>a.classList.remove('rotate-180'));
+  function closeAllMenus() {
+    ['fest-menu', 'prem-menu', 'fest-menu-mob', 'prem-menu-mob']
+      .forEach(id => {
+        const menu = document.getElementById(id);
+        if (menu) menu.classList.add('hidden');
+      });
+
+    document.querySelectorAll('.arrow')
+      .forEach(arrow => arrow.classList.remove('rotate-180'));
   }
 
-  // PREVENIR CIERRE AL HACER CLICK DENTRO DE MOBILE NAV
-  mobileNav?.addEventListener('click', e => e.stopPropagation());
+  // Evita cierre al tocar dentro del menú móvil
+  const mobileNavEl = document.getElementById('mobile-nav');
+  if (mobileNavEl) {
+    mobileNavEl.addEventListener('click', e => e.stopPropagation());
+  }
 
-  // CERRAR AL HACER CLICK FUERA
-  document.addEventListener('click', e=>{
-    if(!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')){
+  // Cerrar al clicar fuera (desktop)
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')) {
       closeAllMenus();
     }
   });
 
-  // ACTIVAR DROPDOWNS
-  toggleDropdown('fest-btn-mob','fest-menu-mob',true);
-  toggleDropdown('prem-btn-mob','prem-menu-mob',true);
-  toggleDropdown('fest-btn','fest-menu');
-  toggleDropdown('prem-btn','prem-menu');
+  // ===== ACTIVAR =====
+  // Mobile
+  toggleDropdown('fest-btn-mob', 'fest-menu-mob', true);
+  toggleDropdown('prem-btn-mob', 'prem-menu-mob', true);
+
+  // Desktop
+  toggleDropdown('fest-btn', 'fest-menu');
+  toggleDropdown('prem-btn', 'prem-menu');
 </script>
 
 </body>
