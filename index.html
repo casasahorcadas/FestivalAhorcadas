@@ -284,7 +284,6 @@
       e.stopPropagation();
 
       const isHidden = menu.classList.contains('hidden');
-
       closeAllMenus();
 
       if (isHidden) {
@@ -295,21 +294,25 @@
   }
 
   function closeAllMenus() {
-    const menus = [
-      'fest-menu', 'prem-menu',
-      'fest-menu-mob', 'prem-menu-mob'
-    ];
-
-    menus.forEach(id => {
-      const menu = document.getElementById(id);
-      if (menu) menu.classList.add('hidden');
-    });
+    ['fest-menu', 'prem-menu', 'fest-menu-mob', 'prem-menu-mob']
+      .forEach(id => {
+        const menu = document.getElementById(id);
+        if (menu) menu.classList.add('hidden');
+      });
 
     document.querySelectorAll('.arrow')
       .forEach(arrow => arrow.classList.remove('rotate-180'));
   }
 
-  // Cerrar al hacer clic fuera del nav
+  // Evita que el clic dentro de los submenús los cierre
+  ['fest-menu', 'prem-menu', 'fest-menu-mob', 'prem-menu-mob'].forEach(id => {
+    const menu = document.getElementById(id);
+    if (menu) {
+      menu.addEventListener('click', e => e.stopPropagation());
+    }
+  });
+
+  // Cerrar SOLO al clicar fuera del nav
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')) {
       closeAllMenus();
