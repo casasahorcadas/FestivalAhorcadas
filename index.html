@@ -295,6 +295,33 @@
       }
     });
   }
+  // Función para cerrar todos los desplegables abiertos
+  function closeAllMenus() {
+    // Busca todos los submenús (escritorio y móvil) y los oculta
+    const menus = [
+    'fest-menu', 'prem-menu', 
+    'fest-menu-mob', 'prem-menu-mob'
+    ];
+  
+    menus.forEach(id => {
+      const menu = document.getElementById(id);
+       if (menu) menu.classList.add('hidden');
+    });
+
+    // Resetea todas las flechas para que apunten hacia abajo
+    const arrows = document.querySelectorAll('.arrow');
+    arrows.forEach(arrow => arrow.classList.remove('rotate-180'));
+  }
+
+  // EVENTO DE CIERRE: Se activa al hacer clic en cualquier parte de la pantalla
+  window.addEventListener('click', function(event) {
+    // Si el clic NO fue en un botón de menú ni dentro de un menú abierto...
+    if (!event.target.closest('button') && !event.target.closest('ul')) {
+      closeAllMenus();
+   }
+  }
+);
+
 
   // Activar para móvil
   toggleDropdown('fest-btn-mob', 'fest-menu-mob');
