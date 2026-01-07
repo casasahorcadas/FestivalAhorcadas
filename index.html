@@ -164,53 +164,46 @@
 </nav>
 
 <!-- Menú Mobile -->
-<nav id="mobile-nav" class="md:hidden hidden mt-3 bg-zinc-900 p-4">
-  <ul class="flex flex-col gap-2 text-base">
-    <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
-    <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
+<!-- Menú mobile desplegable -->
+<nav id="mobile-nav" class="md:hidden hidden bg-black border-t border-zinc-800" aria-hidden="false">
+  <ul class="flex flex-col text-base">
+    <li><a href="index.html" class="block px-4 py-3 hover:bg-zinc-900 border-b border-zinc-900">Inicio</a></li>
+    <li><a href="autores.html" class="block px-4 py-3 hover:bg-zinc-900 border-b border-zinc-900">Autores</a></li>
     
-    <!-- FESTIVAL MOBILE -->
-    <li>
-      <button id="fest-btn-mob" class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
-        Festival <span class="arrow transition-transform">▼</span>
+    <!-- FESTIVAL móvil -->
+    <li class="border-b border-zinc-900">
+      <button id="fest-btn-mob" class="flex justify-between items-center w-full px-4 py-3 hover:bg-zinc-900">
+        Festival
+        <span class="arrow transition-transform duration-300">▼</span>
       </button>
-      <ul id="fest-menu-mob" class="hidden mt-1 bg-white/5 rounded-md ml-4">
-        <li><a href="Festival.html" class="block px-4 py-2">Presentación</a></li>
-        <li><a href="Miercoles.html" class="block px-4 py-2">Miércoles</a></li>
-        <li><a href="Jueves.html" class="block px-4 py-2">Jueves</a></li>
-        <li><a href="Viernes.html" class="block px-4 py-2">Viernes</a></li>
-        <li><a href="Sabado.html" class="block px-4 py-2">Sábado</a>
+      <!-- Submenú: Sin 'absolute', para que empuje hacia abajo -->
+      <ul id="fest-menu-mob" class="hidden bg-zinc-900 py-1">
+        <li><a href="Festival.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Presentación</a></li>
+        <li><a href="Miercoles.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Miércoles</a></li>
+        <li><a href="Jueves.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Jueves</a></li>
+        <li><a href="Viernes.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Viernes</a></li>
+        <li><a href="Sabado.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Sábado</a></li>
       </ul>
     </li>
 
-    <!-- PREMIOS MOBILE -->
-    <li>
-      <button id="prem-btn-mob" class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
-        Premios <span class="arrow transition-transform">▼</span>
+    <li><a href="prensa.html" class="block px-4 py-3 hover:bg-zinc-900 border-b border-zinc-900">Notas de Prensa</a></li>
+
+    <!-- PREMIOS móvil -->
+    <li class="border-b border-zinc-900">
+      <button id="prem-btn-mob" class="flex justify-between items-center w-full px-4 py-3 hover:bg-zinc-900">
+        Premios
+        <span class="arrow transition-transform duration-300">▼</span>
       </button>
-      <ul id="prem-menu-mob" class="hidden mt-1 bg-white/5 rounded-md ml-4">
-        <li><a href="Tormo.html" class="block px-4 py-2">Tormo Negro</a></li>
-        <li><a href="Bevilacqua.html" class="block px-4 py-2">Bevilacqua</a></li>
+      <ul id="prem-menu-mob" class="hidden bg-zinc-900 py-1">
+        <li><a href="Tormo.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Tormo Negro</a></li>
+        <li><a href="Bevilacqua.html" class="block px-8 py-2 text-sm text-gray-300 hover:text-white">Bevilacqua</a></li>
       </ul>
     </li>
+
+    <li><a href="anteriores.html" class="block px-4 py-3 hover:bg-zinc-900 border-b border-zinc-900">Histórico</a></li>
+    <li><a href="Homenaje.html" class="block px-4 py-3 hover:bg-zinc-900">In memoriam</a></li>
   </ul>
 </nav>
-
-        </ul>
-        </li>
-
-        <!-- PREMIOS MOBILE -->
-        <li>
-          <button id="prem-btn-mob" class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
-           Premios <span class="arrow transition-transform">▼</span>
-          </button>
-          <ul id="prem-menu-mob" class="hidden mt-1 bg-white/5 rounded-md ml-4">
-            <li><a href="Tormo.html" class="block px-4 py-2">Tormo Negro</a></li>
-            <li><a href="Bevilacqua.html" class="block px-4 py-2">Bevilacqua</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
 
   </div> 
 </header>
@@ -280,49 +273,36 @@
 
   <!-- JS para el menú hamburguesa y el menú-->
  <script>
-  function setupDropdown(buttonId, menuId) {
-    const btn = document.getElementById(buttonId);
+  // Función genérica para abrir menús
+  function toggleDropdown(btnId, menuId) {
+    const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
     const arrow = btn.querySelector('.arrow');
 
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      menu.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
+      const isHidden = menu.classList.contains('hidden');
+      
+      // Opcional: cerrar otros menús antes de abrir este
+      // closeAllMenus(); 
+
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        arrow.classList.add('rotate-180');
+      } else {
+        menu.classList.add('hidden');
+        arrow.classList.remove('rotate-180');
+      }
     });
   }
 
-  // Configurar Escritorio
-  setupDropdown('fest-btn', 'fest-menu');
-  setupDropdown('prem-btn', 'prem-menu');
-
-  // Configurar Móvil
-  setupDropdown('fest-btn-mob', 'fest-menu-mob');
-  setupDropdown('prem-btn-mob', 'prem-menu-mob');
-
-   // --- Código Menú Móvil (Hamburguesa) ---
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  if (menuBtn && mobileNav) { // <-- AHORA SÍ ESTÁ ENVUELTO EN UN IF
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-
-
-
-  // Cerrar menús al hacer clic fuera
-  window.addEventListener('click', () => {
-    document.querySelectorAll('[id$="-menu"], [id$="-menu-mob"]').forEach(menu => {
-      menu.classList.add('hidden');
-    });
-    document.querySelectorAll('.arrow').forEach(arrow => {
-      arrow.classList.remove('rotate-180');
-    });
-  });
+  // Activar para móvil
+  toggleDropdown('fest-btn-mob', 'fest-menu-mob');
+  toggleDropdown('prem-btn-mob', 'prem-menu-mob');
+  
+  // Activar para escritorio (usa los IDs de tu nav de escritorio)
+  toggleDropdown('fest-btn', 'fest-menu');
+  toggleDropdown('prem-btn', 'prem-menu');
 </script>
 
 
