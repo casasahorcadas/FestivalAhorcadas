@@ -273,7 +273,19 @@
 
   <!-- JS para el menú hamburguesa y el menú-->
 <script>
-  function toggleDropdown(btnId, menuId) {
+  // ===== MENÚ HAMBURGUESA =====
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuBtn && mobileNav) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileNav.classList.toggle('hidden');
+    });
+  }
+
+  // ===== DROPDOWNS =====
+  function toggleDropdown(btnId, menuId, isMobile = false) {
     const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
     if (!btn || !menu) return;
@@ -283,13 +295,12 @@
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
 
-      const isHidden = menu.classList.contains('hidden');
-      closeAllMenus();
-
-      if (isHidden) {
-        menu.classList.remove('hidden');
-        arrow?.classList.add('rotate-180');
+      if (!isMobile) {
+        closeAllMenus(); // SOLO desktop
       }
+
+      menu.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
     });
   }
 
@@ -304,26 +315,25 @@
       .forEach(arrow => arrow.classList.remove('rotate-180'));
   }
 
-  // Evita que el clic dentro de los submenús los cierre
-  ['fest-menu', 'prem-menu', 'fest-menu-mob', 'prem-menu-mob'].forEach(id => {
-    const menu = document.getElementById(id);
-    if (menu) {
-      menu.addEventListener('click', e => e.stopPropagation());
-    }
-  });
+  // Evita cierre al tocar dentro del menú móvil
+  const mobileNavEl = document.getElementById('mobile-nav');
+  if (mobileNavEl) {
+    mobileNavEl.addEventListener('click', e => e.stopPropagation());
+  }
 
-  // Cerrar SOLO al clicar fuera del nav
+  // Cerrar al clicar fuera (desktop)
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')) {
       closeAllMenus();
     }
   });
 
-  // Móvil
-  toggleDropdown('fest-btn-mob', 'fest-menu-mob');
-  toggleDropdown('prem-btn-mob', 'prem-menu-mob');
+  // ===== ACTIVAR =====
+  // Mobile
+  toggleDropdown('fest-btn-mob', 'fest-menu-mob', true);
+  toggleDropdown('prem-btn-mob', 'prem-menu-mob', true);
 
-  // Escritorio
+  // Desktop
   toggleDropdown('fest-btn', 'fest-menu');
   toggleDropdown('prem-btn', 'prem-menu');
 </script>
