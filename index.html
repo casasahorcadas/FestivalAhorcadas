@@ -68,93 +68,87 @@
         Cartel
       </a>
 
-      <!-- Botón hamburguesa -->
-      <button id="menu-btn" class="md:hidden ml-4 text-white focus:outline-none" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-        <i class="fas fa-bars fa-lg"></i>
-      </button>
+    <!-- BOTÓN HAMBURGUESA MOBILE -->
+<button id="menu-btn" class="md:hidden px-3 py-2 text-white bg-red-500 rounded">
+  ☰ Menú
+</button>
 
-     
-     <!-- Menú principal (Escritorio) -->
-    <nav id="main-nav" class="hidden md:block mt-4">
-      <ul class="flex md:flex-row flex-col gap-6 text-lg">
-        <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
-        <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
-    
-        <!-- FESTIVAL -->
-        <li class="relative">
-         <button id="fest-btn" class="hover:text-red-500 flex items-center gap-2">
-           Festival <span class="arrow transition-transform text-xs">▼</span>
-          </button>
-         <ul id="fest-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
-          <li><a href="Festival.html" class="block px-4 py-2 hover:bg-red-500">Presentación</a></li>
-          <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miercoles 4</a></li>
-          <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves 5</a></li>
-          <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes 6</a></li>
-          <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado 7</a></li>
-        </ul>
-      </li>
-
-      <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
-
-      <!-- PREMIOS -->
-      <li class="relative">
-        <button id="prem-btn" class="hover:text-red-500 flex items-center gap-2">
-          Premios <span class="arrow transition-transform text-xs">▼</span>
-        </button>
-        <ul id="prem-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
-          <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
-          <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
-        </ul>
-      </li>
-    
-        <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
-        <li><a href="Homenaje.html" class="hover:text-red-500">In memoriam</a></li>
-      </ul>
-    </nav>
-
-<!-- Menú Mobile -->
-<nav id="mobile-nav" class="md:hidden hidden mt-3 bg-zinc-900 p-4">
-  <ul class="flex flex-col gap-2 text-base">
+<!-- MENÚ MOBILE / DESKTOP -->
+<nav>
+  <!-- MOBILE NAV -->
+  <ul id="mobile-nav" class="md:hidden hidden mt-3 bg-zinc-900 p-4 flex flex-col gap-2 text-base">
     <li><a href="index.html" class="block px-3 py-2 rounded hover:bg-white/5">Inicio</a></li>
     <li><a href="autores.html" class="block px-3 py-2 rounded hover:bg-white/5">Autores</a></li>
 
-     <!-- FESTIVAL MOBILE -->
+    <!-- FESTIVAL MOBILE -->
     <li class="w-full">
-      <button id="fest-btn-mob"
-        class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
+      <button id="fest-btn-mob" class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
         Festival <span class="arrow transition-transform">▼</span>
       </button>
-      <ul id="fest-menu-mob"
-      class="hidden mt-1 bg-white/5 rounded-md w-full">
-        <li><a href="Festival.html" class="block w-full px-4 py-2">Presentación</a></li>
-        <li><a href="Miercoles.html" class="block w-full px-4 py-2">Miércoles 4</a></li>
-        <li><a href="Jueves.html" class="block w-full px-4 py-2">Jueves 5</a></li>
-        <li><a href="Viernes.html" class="block w-full px-4 py-2">Viernes 6</a></li>
-        <li><a href="Sabado.html" class="block w-full px-4 py-2">Sábado 7</a></li>
+      <ul id="fest-menu-mob" class="hidden mt-1 bg-zinc-900 rounded-md w-full">
+        <li><a href="Festival.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Presentación</a></li>
+        <li><a href="Miercoles.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Miércoles 4</a></li>
+        <li><a href="Jueves.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Jueves 5</a></li>
+        <li><a href="Viernes.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Viernes 6</a></li>
+        <li><a href="Sabado.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Sábado 7</a></li>
       </ul>
     </li>
 
     <li><a href="prensa.html" class="block px-3 py-2 rounded hover:bg-white/5">Notas de Prensa</a></li>
 
-     <!-- PREMIOS MOBILE -->
+    <!-- PREMIOS MOBILE -->
     <li class="w-full">
-      <button id="prem-btn-mob"
-        class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
+      <button id="prem-btn-mob" class="flex justify-between items-center w-full px-3 py-2 hover:bg-white/5">
         Premios <span class="arrow transition-transform">▼</span>
       </button>
-
-      <ul id="prem-menu-mob"
-        class="hidden mt-1 bg-white/5 rounded-md w-full">
-        <li><a href="Tormo.html" class="block w-full px-4 py-2">Tormo Negro</a></li>
-        <li><a href="Bevilacqua.html" class="block w-full px-4 py-2">Bevilacqua</a></li>
+      <ul id="prem-menu-mob" class="hidden mt-1 bg-zinc-900 rounded-md w-full">
+        <li><a href="Tormo.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Tormo Negro</a></li>
+        <li><a href="Bevilacqua.html" class="block w-full px-4 py-2 text-gray-300 hover:text-white">Bevilacqua</a></li>
       </ul>
     </li>
+
     <li><a href="anteriores.html" class="block px-3 py-2 rounded hover:bg-white/5">Histórico</a></li>
     <li><a href="Homenaje.html" class="block px-3 py-2 rounded hover:bg-white/5">In memoriam</a></li>
   </ul>
+
+  <!-- DESKTOP NAV -->
+  <ul id="main-nav" class="hidden md:flex mt-4 gap-6 text-lg">
+    <li><a href="index.html" class="text-red-500 font-semibold hover:text-red-400">Inicio</a></li>
+    <li><a href="autores.html" class="hover:text-red-500">Autores</a></li>
+
+    <!-- FESTIVAL DESKTOP -->
+    <li class="relative">
+      <button id="fest-btn" class="hover:text-red-500 flex items-center gap-2">
+        Festival <span class="arrow transition-transform text-xs">▼</span>
+      </button>
+      <ul id="fest-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
+        <li><a href="Festival.html" class="block px-4 py-2 hover:bg-red-500">Presentación</a></li>
+        <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miércoles 4</a></li>
+        <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves 5</a></li>
+        <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes 6</a></li>
+        <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado 7</a></li>
+      </ul>
+    </li>
+
+    <li><a href="prensa.html" class="hover:text-red-500">Notas de Prensa</a></li>
+
+    <!-- PREMIOS DESKTOP -->
+    <li class="relative">
+      <button id="prem-btn" class="hover:text-red-500 flex items-center gap-2">
+        Premios <span class="arrow transition-transform text-xs">▼</span>
+      </button>
+      <ul id="prem-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
+        <li><a href="Tormo.html" class="block px-4 py-2 hover:bg-red-500">Tormo Negro</a></li>
+        <li><a href="Bevilacqua.html" class="block px-4 py-2 hover:bg-red-500">Bevilacqua</a></li>
+      </ul>
+    </li>
+
+    <li><a href="anteriores.html" class="hover:text-red-500">Histórico</a></li>
+    <li><a href="Homenaje.html" class="hover:text-red-500">In memoriam</a></li>
+  </ul>
 </nav>
 
-  </div> 
+
 </header>
 
   <!-- Encabezado principal -->
@@ -218,73 +212,55 @@
 
 </footer>
 
-
-
-  <!-- JS para el menú hamburguesa y el menú-->
+<!-- JS RESPONSIVE -->
 <script>
-  // ===== MENÚ HAMBURGUESA =====
+  // BOTÓN HAMBURGUESA
   const menuBtn = document.getElementById('menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
-
-  if (menuBtn && mobileNav) {
-    menuBtn.addEventListener('click', (e) => {
+  if(menuBtn && mobileNav){
+    menuBtn.addEventListener('click', e => {
       e.stopPropagation();
       mobileNav.classList.toggle('hidden');
     });
   }
 
-  // ===== DROPDOWNS =====
-  function toggleDropdown(btnId, menuId, isMobile = false) {
+  // FUNCIONES DROPDOWN
+  function toggleDropdown(btnId, menuId, isMobile=false){
     const btn = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
-    if (!btn || !menu) return;
-
+    if(!btn || !menu) return;
     const arrow = btn.querySelector('.arrow');
-
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', e => {
       e.stopPropagation();
-
-      if (!isMobile) {
-        closeAllMenus(); // SOLO desktop
-      }
-
+      if(!isMobile) closeAllMenus();
       menu.classList.toggle('hidden');
       arrow?.classList.toggle('rotate-180');
     });
   }
 
-  function closeAllMenus() {
-    ['fest-menu', 'prem-menu', 'fest-menu-mob', 'prem-menu-mob']
-      .forEach(id => {
-        const menu = document.getElementById(id);
-        if (menu) menu.classList.add('hidden');
-      });
-
-    document.querySelectorAll('.arrow')
-      .forEach(arrow => arrow.classList.remove('rotate-180'));
+  function closeAllMenus(){
+    ['fest-menu','prem-menu','fest-menu-mob','prem-menu-mob'].forEach(id=>{
+      const menu = document.getElementById(id);
+      if(menu) menu.classList.add('hidden');
+    });
+    document.querySelectorAll('.arrow').forEach(a=>a.classList.remove('rotate-180'));
   }
 
-  // Evita cierre al tocar dentro del menú móvil
-  const mobileNavEl = document.getElementById('mobile-nav');
-  if (mobileNavEl) {
-    mobileNavEl.addEventListener('click', e => e.stopPropagation());
-  }
+  // PREVENIR CIERRE AL HACER CLICK DENTRO DE MOBILE NAV
+  mobileNav?.addEventListener('click', e => e.stopPropagation());
 
-  // Cerrar al clicar fuera (desktop)
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')) {
+  // CERRAR AL HACER CLICK FUERA
+  document.addEventListener('click', e=>{
+    if(!e.target.closest('#main-nav') && !e.target.closest('#mobile-nav')){
       closeAllMenus();
     }
   });
 
-  // ===== ACTIVAR =====
-  // Mobile
-  toggleDropdown('fest-btn-mob', 'fest-menu-mob', true);
-  toggleDropdown('prem-btn-mob', 'prem-menu-mob', true);
-
-  // Desktop
-  toggleDropdown('fest-btn', 'fest-menu');
-  toggleDropdown('prem-btn', 'prem-menu');
+  // ACTIVAR DROPDOWNS
+  toggleDropdown('fest-btn-mob','fest-menu-mob',true);
+  toggleDropdown('prem-btn-mob','prem-menu-mob',true);
+  toggleDropdown('fest-btn','fest-menu');
+  toggleDropdown('prem-btn','prem-menu');
 </script>
 
 </body>
