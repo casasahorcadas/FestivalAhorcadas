@@ -87,10 +87,10 @@
           </button>
          <ul id="fest-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
           <li><a href="Festival.html" class="block px-4 py-2 hover:bg-red-500">Presentación</a></li>
-          <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miercoles</a></li>
-          <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves</a></li>
-          <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes</a></li>
-          <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado</a></li>
+          <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miercoles 4</a></li>
+          <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves 5</a></li>
+          <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes 6</a></li>
+          <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado 7</a></li>
         </ul>
       </li>
 
@@ -138,10 +138,10 @@
       </button>
       <ul id="fest-menu" class="hidden absolute left-0 mt-2 bg-black shadow-lg rounded-md py-2 w-40 z-50">
         <li><a href="Festival.html" class="block px-4 py-2 hover:bg-red-500">Presentación</a></li>
-        <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miercoles</a></li>
-        <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves</a></li>
-        <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes</a></li>
-        <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado</a></li>
+        <li><a href="Miercoles.html" class="block px-4 py-2 hover:bg-red-500">Miercoles 4</a></li>
+        <li><a href="Jueves.html" class="block px-4 py-2 hover:bg-red-500">Jueves 5</a></li>
+        <li><a href="Viernes.html" class="block px-4 py-2 hover:bg-red-500">Viernes 6</a></li>
+        <li><a href="Sabado.html" class="block px-4 py-2 hover:bg-red-500">Sábado 7</a></li>
       </ul>
     </li>
 
@@ -299,6 +299,20 @@
   // Configurar Móvil
   setupDropdown('fest-btn-mob', 'fest-menu-mob');
   setupDropdown('prem-btn-mob', 'prem-menu-mob');
+
+   // --- Código Menú Móvil (Hamburguesa) ---
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuBtn && mobileNav) { // <-- AHORA SÍ ESTÁ ENVUELTO EN UN IF
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+    });
+  }
+
+
 
   // Cerrar menús al hacer clic fuera
   window.addEventListener('click', () => {
