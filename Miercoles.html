@@ -25,8 +25,8 @@
       .site-subtitle { font-size: 1rem; color: #e50914; }
     }
     .texto_completo{
-      background-color: white;
-      color:black;
+      background-color: black;
+      color:white;
     }
     
 /* El contenedor principal usa flexbox para organizar sus hijos */
@@ -52,7 +52,7 @@
 .main-content-wrapper {
     flex: 1;
     display: flex;
-    gap: 5px;
+    gap: 30px;
     
 }
 
@@ -102,15 +102,17 @@
    /*  */
 /* Columna 3 – derecha */
 .sidebar-right {
-    width: 110px;       /* Aquí decides qué tan grande quieres las imágenes */
+    width: 160px;       /* Aquí decides qué tan grande quieres las imágenes */
     flex-shrink: 0;     /* No se encoge */
     text-align: center;
     font-size: 1.5rem;
+    background-color: white;
+    color: black;
 }
 
 /* Imagen del logo */
 .sidebar-right img {
-    width: 100%;        /* Aumenta o reduce automáticamente */
+    width: 85%;        /* Aumenta o reduce automáticamente */
     height: auto;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -161,7 +163,7 @@
     }
 }
 .texto {
-      background-color: white;
+      background-color: black;
       font-family: Arial, Helvetica, sans-serif;
       margin-left: 1px;
       margin-right: 10px;
@@ -190,9 +192,9 @@
     <div class="text-center">
       <h1 class="text-lg md:text-2xl text-white leading-tight">
         XIII FESTIVAL INTERNACIONAL <br>
-        <span class="text-red-500 md:text-2xl">
-          DE NOVELA NEGRA Y CRIMINAL<br>
-          MIÉRCOLES 4 DE FEBRERO 2026
+        <span class="text-[#e50914] md:text-2xl">
+          <strong></strong>DE NOVELA NEGRA Y CRIMINAL<br>
+          MIÉRCOLES 4 DE FEBRERO 2026</strong>
         </span>
       </h1>
     </div>
@@ -228,16 +230,15 @@
       <!-- Mañana-->
       <!-- Columna 1  -->
       <div class="content columna">
-      <h2 class="content_h2 py-3">
-               CON SANGRE ENTRA: PLAN DE ANIMACIÓN A LA LECTURA DE MISTERIO<br>
-               CON EL PATROCINIO DE GENERAL OPTICA
-         </h2>
-
-        
-        
+             
         <h3 class="content_h3 text-xl">
            <strong>SALÓN DE ACTOS DEL MUSEO PALEONTOLÓGICO DE CUENCA</strong>
          </h3>
+        <p class="texto md:text-xl text-justify py-2 ">
+          <strong>Con sangre entra:</strong>Plan de animación
+           a la lectura de Misterio con el patrocinio de General Optica
+        </p>   
+        
         <p class="texto md:text-xl text-justify py-2 ">
           <strong>Actividades para 6º de Educación Primaria.</strong>
         </p>  
@@ -338,7 +339,7 @@
     
   <!-- Columna 3 (Patrocinadores) No visible en móvil-->
     <div class="only-desktop sidebar-right columna flex-col items-center">
-      <p class="texto mb-5">
+      <p class="text-xl mb-4">
            <strong>Patrocinan: <br></strong>
       </p>
       <img src="img/logos/1. Junta de Comunidades de Castilla-La Mancha.PNG" class="sidebar-right">
