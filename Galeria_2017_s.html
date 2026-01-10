@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Galería - Carrusel</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white; /* Para que el botón de cerrar y flechas se vean */
+  }
+
+  .slider-container { /* Renombrado de .slider a .slider-container para mayor claridad */
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .media-viewer {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* transition: opacity 0.5s ease; */
+  }
+
+    .arrow {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background: rgba(238, 6, 6, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    color: rgba(238, 231, 231); /* Color de las flechas */
+    text-decoration: none;
+  }
+
+  .arrow:hover {
+    background: rgb(238, 6, 6, 0.4);
+  }
+
+
+  #prev { left: 20px; }
+  #next { right: 20px; }
+
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10; /* Asegura que el botón cerrar esté por encima de la imagen/vídeo */
+  }
+  
+  #counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: red;
+    font-size: 30px;
+  }
+</style>
+</head>
+
+<body>
+
+<a id="close" href="javascript:history.back()">✕</a>
+
+<div class="slider-container">
+  <div id="prev" class="arrow">❮</div>
+  <!-- Este contenedor vacío será llenado por JS con <img> o <video> -->
+  <div id="media-wrapper" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;"></div>
+  <div id="next" class="arrow">❯</div>
+  <div id="counter"></div>
+</div>
+
+<script>
+  // NOTA: Estos 'sets' deben estar definidos también en tu página principal (index.html) 
+  // para que la navegación inicial sepa a qué set pertenece cada miniatura.
+  const sets = {
+    1: [
+    "Galeria_2017_archivos/Adios.jpg",
+  ]    
+  };
+
+ 
+
+  // Leer parámetros de la URL
+  const params = new URLSearchParams(window.location.search);
+  const setKey = params.get("set"); // Usamos setKey para evitar conflictos de nombres
+  // El parámetro 'img' de la URL debería empezar en 1 (ej: ?set=1&img=1)
+  let index = Number(params.get("img")) - 1; 
+
+  const images = sets[setKey];
+  const mediaWrapper = document.getElementById("media-wrapper");
+  const counter = document.getElementById("counter");
+
+  function show() {
+    if (!images || images.length === 0) return;
+
+    const currentSrc = images[index];
+    
+    // Limpiamos el contenedor por si había un elemento previo (img o video)
+    mediaWrapper.innerHTML = ''; 
+
+    let mediaElement;
+
+    if (currentSrc.endsWith('.mp4')) {
+      // Si es un vídeo, creamos un elemento <video>
+      mediaElement = document.createElement('video');
+      mediaElement.src = currentSrc;
+      mediaElement.controls = true; // Muestra los controles de reproducción
+      mediaElement.autoplay = true; // Reproducción automática al cargar
+      mediaElement.muted = false; // Con sonido
+    } else {
+      // Si es una imagen, creamos un elemento <img>
+      mediaElement = document.createElement('img');
+      mediaElement.src = currentSrc;
+    }
+
+    // Añadimos una clase común para aplicar estilos (ancho/alto máximo)
+    mediaElement.classList.add('media-viewer'); 
+    
+    // Insertamos el elemento en la página
+    mediaWrapper.appendChild(mediaElement);
+
+    // Actualizamos el contador visual
+    counter.textContent = `${index + 1} / ${images.length}`;
+  }
+
+  document.getElementById("prev").onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    show();
+  };
+
+  document.getElementById("next").onclick = () => {
+    index = (index + 1) % images.length;
+    show();
+  };
+
+  show(); // mostrar el primer elemento al cargar
+</script>
+
+</body>
+</html>
