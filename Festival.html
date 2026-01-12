@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival de Novela Negra 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente tipo máquina de escribir -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" href="img/Logo.jpg">
+
+  <style>
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
+    }
+    .texto_completo{
+      background-color: white;
+      color:black;
+    }
+    
+/* El contenedor principal usa flexbox para organizar sus hijos */
+/* Contenedor general en dos columnas */
+.dos-columnas-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 25px;
+}
+
+/* Todas las columnas comparten base */
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Columna 1  – texto principal */
+.main-content-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 5px;
+    
+}
+
+.content {
+    flex:1;     
+    max-width: 1200px;       /* Permite que se reduzca correctamente */
+}
+.content_h1 {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.content_h2 {
+    font-size: 1rem;
+    background-color: #e50914;
+    color: white;
+     /* 1. Convierte el bloque en línea para que el fondo siga al texto */
+    display: inline-block;
+    max-width: 550px;
+    
+    /* 2. Controla el espacio entre líneas para cerrar el hueco blanco */
+    line-height: 1.5; 
+    
+    /* 3. Clonar el diseño en cada salto de línea */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    
+    /* 4. El truco: box-shadow del mismo color para rellenar espacios */
+    padding: 0.6rem 0;
+    box-shadow: 0.5rem 0 0 #e50914, -0.5rem 0 0 #e50914;
+    margin-bottom: 10px;
+        
+}
+.caption {
+    background: #222;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 3px solid #e3e3e3;
+}
+.caption-bar {
+    background: #222;              /* color de fondo de la franja */
+    color: #fff;                   /* texto blanco */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+@media (max-width: 640px) {
+  .content_h2 {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}
+.content_h3 {
+    font-size: 1rem;
+    color: red;
+    margin-bottom: 5px;    
+}
+
+/* Columna 2 – centro */
+.sidebar {
+    width: 40%;
+    max-width: 350px;
+    flex-shrink: 0;
+    text-align: center;
+    gap:30px
+}
+   /*  */
+.only-desktop {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .only-desktop {
+    display: flex !important;
+  }
+}
+
+/* ----------- MÓVIL / TABLET ----------- */
+@media (max-width: 1024px) {
+    
+    /* Las columnas pasan a estar una debajo de la otra */
+    .dos-columnas-layout {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    /* Las columnas se estiran a ancho completo del móvil */
+    
+    .content,
+    .sidebar
+   {
+        max-width: 100%;
+    }
+
+   
+}
+.texto {
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 1px;
+      margin-right: 10px;
+    }
+
+   
+
+ </style>
+</head>
+<body class="bg-black text-white">
+  
+  <!-- HEADER -->
+<header class="px-8 py-4 max-w-8xl mx-auto bg-black">
+  <div class="grid grid-cols-1 md:grid-cols-3 items-center px-8 py-4 relative">
+
+    <!-- Logo izquierda -->
+    <div class="flex-shrink-0 flex justify-center md:justify-start">
+      <img 
+        src="img/Logo.jpg"
+        alt="Logo del Club"
+        class="w-40 h-40 object-contain"
+      />
+    </div>
+
+    <!-- Texto centrado -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl text-white leading-tight">
+        XIII FESTIVAL INTERNACIONAL <br>
+        <span class="text-[#e50914] md:text-2xl">
+          DE NOVELA NEGRA Y CRIMINAL
+        </span>
+      </h1>
+    </div>
+
+    <!-- Redes derecha -->
+    <div class="flex justify-center md:justify-end gap-4 text-2xl md:pr-8">
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES"
+         target="_blank" class="text-white hover:text-blue-500">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/lascasasahorcadas/"
+         target="_blank" class="text-white hover:text-pink-500">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://x.com/CasasAhorcadas"
+         target="_blank" class="text-white hover:text-sky-400">
+        <i class="fab fa-x-twitter fa-lg"></i>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- FESTIVAL TARDES -->
+ <div class="texto_completo">
+  <!--- Ponemos Texto con la foto del Tormo y el logo de Masfarné--->
+    <div class="container dos-columnas-layout">
+  
+  <!--Miércoles  -->
+  
+      <!-- Columna 1  -->
+      <div class="content columna">
+          
+        <h1 class="content_h1 md:text-3xl">
+              <strong>PRESENTACIÓN XIII FESTIVAL DE NOVELA CRIMINAL LAS CASAS AHORCADAS </strong><br>
+        </h1>
+        <h3 class="content_h3 md:text-2xl">
+          <strong>4-7 DE FEBRERO 2026 - CUENCA</strong>
+        </h3>
+        <p class="texto md:text-2xl text-justify"> 
+          Por Sergio Vera Valencia, director de las Casas Ahorcadas 
+          y doctor en Competencia Lectora.
+        </p>
+         <p class="texto md:text-2xl text-justify py-5">
+           El Plan Estratégico de Comprensión Lectora y Fomento de la Lectura de 
+           Castilla-La Mancha considera fundamental dinamizar y sensibilizar 
+           a la población regional para el fomento de la lectura y la comprensión lectora 
+           en el ámbito educativo. Pero para que el plan sea realmente efectivo habrá que animar 
+           no solo al alumnado, sino a toda la comunidad educativa, ya que el hábito lector 
+           se adquiere fundamentalmente por la observación de modelos lectores. 
+           Entre las personas que más influyen en los alumnos se encuentran sus padres y madres.
+        </p>
+        <p class="texto md:text-2xl text-justify">
+        Por ello, Las Casas Ahorcadas —elegido mejor club de lectura de Castilla-La Mancha en 2016— 
+        lleva más de quince años animando a la lectura del género negro y promoviendo el plan 
+        Con sangre entra. Se trata de una iniciativa que fomenta la literatura popular desde 
+        un enfoque igualmente popular, mediante la organización de actividades dirigidas a un 
+        público poco habituado a asistir a eventos literarios. 
+        Entre ellas destaca nuestro Festival Internacional de Novela Criminal, 
+        cuya decimotercera edición se celebrará en Cuenca del 4 al 7 de febrero de 2026 y que
+        , además del fomento de la lectura, tendrá como uno de sus ejes principales 
+        la reivindicación de algunas de las grandes escritoras del género negro en nuestro idioma.
+        </p>
+        <p class="texto md:text-2xl text-justify py-2">
+          No en vano, con motivo del 50.º aniversario del fallecimiento de Agatha Christie, 
+          hemos querido que esta edición del festival sirva para rendir homenaje a algunas 
+          de las grandes reinas del crimen en lengua castellana. Escritoras estrechamente 
+          vinculadas al género, como la argentina Claudia Piñeiro o las periodistas 
+          y novelistas Berna González Harbour, Marta Robles y Cruz Morcillo, 
+          compartirán protagonismo con referentes mayores de nuestras letras 
+          que lo han cultivado de forma ocasional, como la Premio Nacional de las Letras 
+          Rosa Montero o la Premio Planeta Carmen Posadas, entre muchas otras.
+        </p>
+        <p class="texto md:text-2xl text-justify py-2">
+          Y para aportar nuestro granito de arena al citado Plan Estratégico, hemos organizado 
+          el festival más ambicioso, variado e internacional de cuantos se han celebrado hasta la fecha.
+           Un programa que reunirá a una treintena de los mejores autores, contará con cuatro grandes 
+           estrellas internacionales y ofrecerá actividades pensadas para distintos perfiles lectores. 
+           Asimismo, se refuerza de manera significativa la programación destinada a los centros 
+           educativos, con tres jornadas matinales y propuestas adaptadas a diversas materias 
+           y niveles, dirigidas a colegios e institutos desde 5.º de Educación Primaria hasta 4.º de ESO.
+           Porque, como nos gusta decir, las Casas Ahorcadas son un festival organizado por lectores 
+           y para formar lectores: un proyecto socioeducativo para toda la familia y todas las familias, 
+           con actividades dirigidas a los aficionados al género negro, pero también a niños 
+           y adultos menos amantes de la lectura.
+        </p>
+        <p class="texto md:text-2xl text-justify py-2">
+          En este sentido, es toda una declaración de intenciones que, tras la inauguración del 
+          festival y la tradicional entrega del Premio Tormo Negro Masfarné, 
+          que este año recaerá  en Fernando Benzo por su novela Los perseguidos, 
+          el propio autor, en su faceta de secretario general de la Federación de Gremios de Editores, 
+          y la profesora en excedencia y reina del thriller infantil y juvenil Beatriz Osés, ganadora, 
+          entre otros, del Premio Barco de Vapor, intenten ofrecer pistas para resolver el misterio 
+          de cómo animar a la lectura en la era de WhatsApp.
+        </p>
+      </div> <!-- Cierra content columna-->
+       <!-- Columna 2  -->
+        <div class="sidebar columna">
+            <img src="img/Sergio.jpg">
+            <div class="caption">
+            <strong>Sergio Vera Valencia</strong>
+        </div>
+        
+        </div> <!-- Cierra content columna-->
+  
+  </div> <!-- Cierra container dos columnas layout-->
+
+
+ <!-- FOOTER -->
+<footer class="flex flex-col md:flex-row items-start justify-between px-10  mt-10 bg-white text-black">
+
+  <!-- Contenedor logos -->
+  <div class="w-full flex flex-col gap-8">
+
+    <!-- Patrocinan -->
+    <div class="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+      <span class="colaboran font-bold text-lg md:text-xl whitespace-nowrap">
+        Patrocinan:
+      </span>
+
+      <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        <img src="img/logos/1. Junta de Comunidades de Castilla-La Mancha.PNG" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Junta_Quijote.png" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo Diputacion PNG.png" class="h-14 md:h-18 object-contain" loading="lazy">
+        <img src="img/logos/Consorcio_color.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/2. Ayuntamiento.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/LOGO_COLOR_VISIO╠üN_Y_AUDICION_pastilla_CMYK.png" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/Logo masfarne 2023.JPG" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/4. Patronato.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Colaboran -->
+    <div class="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+      <span class="colaboran font-bold text-lg md:text-xl whitespace-nowrap">
+        Colaboran:
+      </span>
+
+      <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+        <img src="img/logos/1. UCLM.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/mupa def.jpg" class="h-12 md:h-16 object-contain" loading="lazy">
+        <img src="img/logos/3. SERcuenca.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_TV.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Toro.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+        <img src="img/logos/Logo_Graficas.jpg" class="h-10 md:h-14 object-contain" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</div> <!-- Cierra texto completo-->
+      <!-- Botón volver a inicio -->
+      <a
+       href="#"
+       onclick="history.back(); return false;"
+       class="
+        fixed
+        top-5 right-5
+        md:top-32 md:right-5
+        z-50
+        bg-red-600
+        p-4
+        rounded-full
+        shadow-lg
+        hover:bg-red-700
+        transition
+      "
+      title="Volver"
+      >
+      <svg
+        viewBox="0 0 24 24"
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      </a>
+</body>
+</html>
