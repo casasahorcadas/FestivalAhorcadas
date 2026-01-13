@@ -35,7 +35,7 @@
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    padding: 25px 25px;
+    padding: 25px 80px;
 }
 
 /* Todas las columnas comparten base */
@@ -55,7 +55,7 @@
 
 .content {
     flex:1;     
-    max-width: 1200px;       /* Permite que se reduzca correctamente */
+    max-width: 800px;       /* Permite que se reduzca correctamente */
 }
 .content_h1 {
     font-size: 2rem;
@@ -84,28 +84,6 @@
     margin-bottom: 10px;
         
 }
-.caption {
-    background: #222;
-    color: white;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-top: 3px solid #e3e3e3;
-}
-.caption-bar {
-    background: #222;              /* color de fondo de la franja */
-    color: #fff;                   /* texto blanco */
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 10px 0;
-    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
-    transition: background 0.3s ease, color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
 @media (max-width: 640px) {
   .content_h2 {
     max-width: 100%;
@@ -120,11 +98,8 @@
 
 /* Columna 2 – centro */
 .sidebar {
-    width: 40%;
-    max-width: 350px;
-    flex-shrink: 0;
-    text-align: center;
-    gap:30px
+       flex:1;     
+    max-width: 30%;       /* Permite que se reduzca correctamente */
 }
    /*  */
 .only-desktop {
@@ -191,7 +166,8 @@
       <h1 class="text-lg md:text-2xl text-white leading-tight">
         XIII FESTIVAL INTERNACIONAL <br>
         <span class="text-[#e50914] md:text-2xl">
-          DE NOVELA NEGRA Y CRIMINAL
+          DE NOVELA NEGRA Y CRIMINAL<br>
+          4 -7 DE FEBRERO DE 2026
         </span>
       </h1>
     </div>
@@ -213,6 +189,12 @@
     </div>
 
   </div>
+  <div class="flex justify-center mt-6">
+    <a href="img/Programa/Presentación.pdf" 
+    download class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-colors font-bold text-sm">
+      <i class="fas fa-download"></i> DESCARGAR PRESENTACIÓN XIII FESTIVAL
+    </a>
+  </div>
 </header>
 
 <!-- FESTIVAL TARDES -->
@@ -228,64 +210,44 @@
         <h1 class="content_h1 md:text-3xl">
               <strong>PRESENTACIÓN XIII FESTIVAL DE NOVELA CRIMINAL LAS CASAS AHORCADAS </strong><br>
         </h1>
-        <h3 class="content_h3 md:text-2xl">
-          <strong>4-7 DE FEBRERO 2026 - CUENCA</strong>
-        </h3>
-        <p class="texto md:text text-justify"> 
-          Por Sergio Vera Valencia, director de las Casas Ahorcadas 
-          y doctor en Competencia Lectora.
-        </p>
-         <p class="texto md:text text-justify py-5">
-           El Plan Estratégico de Comprensión Lectora y Fomento de la Lectura de 
-           Castilla-La Mancha considera fundamental dinamizar y sensibilizar 
-           a la población regional para el fomento de la lectura y la comprensión lectora 
-           en el ámbito educativo. Pero para que el plan sea realmente efectivo habrá que animar 
-           no solo al alumnado, sino a toda la comunidad educativa, ya que el hábito lector 
-           se adquiere fundamentalmente por la observación de modelos lectores. 
-           Entre las personas que más influyen en los alumnos se encuentran sus padres y madres.
+                
+         <p class="texto md:text text-justify py-3">
+           Cuenca acogerá del 4 al 7 de febrero de 2026 el XIII Festival Internacional de 
+           Novela Criminal Las Casas Ahorcadas, una de las citas culturales más relevantes 
+           del género negro en España. Organizado por lectores para lectores, el festival 
+           nace de la iniciativa del Club de Lectura Las Casas Ahorcadas, que lleva más de 
+           quince años promoviendo el hábito lector y la divulgación literaria en Castilla-La Mancha.
         </p>
         <p class="texto md:text text-justify">
-        Por ello, Las Casas Ahorcadas —elegido mejor club de lectura de Castilla-La Mancha en 2016— 
-        lleva más de quince años animando a la lectura del género negro y promoviendo el plan 
-        Con sangre entra. Se trata de una iniciativa que fomenta la literatura popular desde 
-        un enfoque igualmente popular, mediante la organización de actividades dirigidas a un 
-        público poco habituado a asistir a eventos literarios. 
-        Entre ellas destaca nuestro Festival Internacional de Novela Criminal, 
-        cuya decimotercera edición se celebrará en Cuenca del 4 al 7 de febrero de 2026 y que
-        , además del fomento de la lectura, tendrá como uno de sus ejes principales 
-        la reivindicación de algunas de las grandes escritoras del género negro en nuestro idioma.
+        La decimotercera edición será la más ambiciosa e internacional hasta la fecha y reunirá a 
+        una treintena de autores y autoras nacionales e internacionales, con especial protagonismo 
+        de grandes voces femeninas del género negro en lengua castellana, coincidiendo con el 
+        50.º aniversario del fallecimiento de Agatha Christie.
         </p>
         <p class="texto md:text text-justify py-2">
-          No en vano, con motivo del 50.º aniversario del fallecimiento de Agatha Christie, 
-          hemos querido que esta edición del festival sirva para rendir homenaje a algunas 
-          de las grandes reinas del crimen en lengua castellana. Escritoras estrechamente 
-          vinculadas al género, como la argentina Claudia Piñeiro o las periodistas 
-          y novelistas Berna González Harbour, Marta Robles y Cruz Morcillo, 
-          compartirán protagonismo con referentes mayores de nuestras letras 
-          que lo han cultivado de forma ocasional, como la Premio Nacional de las Letras 
-          Rosa Montero o la Premio Planeta Carmen Posadas, entre muchas otras.
+          Entre los participantes destacan Rosa Montero, Claudia Piñeiro, Gianrico Carofiglio, 
+          Lorenzo Silva, Víctor del Árbol, César Pérez Gellida, Carmen Posadas, Berna González Harbour, 
+          Marta Robles, Cruz Morcillo, Marco Malvaldi, Lorenzo Lunar, Jerónimo Tristante, Tony Hill, 
+          Carlos Augusto Casas, Carmen Corazzini, Sheila Queralt, Jorge Ortega y Fernando Benzo.
         </p>
         <p class="texto md:text text-justify py-2">
-          Y para aportar nuestro granito de arena al citado Plan Estratégico, hemos organizado 
-          el festival más ambicioso, variado e internacional de cuantos se han celebrado hasta la fecha.
-           Un programa que reunirá a una treintena de los mejores autores, contará con cuatro grandes 
-           estrellas internacionales y ofrecerá actividades pensadas para distintos perfiles lectores. 
-           Asimismo, se refuerza de manera significativa la programación destinada a los centros 
-           educativos, con tres jornadas matinales y propuestas adaptadas a diversas materias 
-           y niveles, dirigidas a colegios e institutos desde 5.º de Educación Primaria hasta 4.º de ESO.
-           Porque, como nos gusta decir, las Casas Ahorcadas son un festival organizado por lectores 
-           y para formar lectores: un proyecto socioeducativo para toda la familia y todas las familias, 
-           con actividades dirigidas a los aficionados al género negro, pero también a niños 
-           y adultos menos amantes de la lectura.
+          El programa incluye mesas redondas, encuentros literarios, homenajes, entrega de premios y 
+          actividades centradas en la memoria histórica, la criminología, las ciencias forenses y 
+          las adaptaciones audiovisuales de novelas al cine y la televisión, con propuestas 
+          dirigidas tanto a lectores habituales como a nuevos públicos.
         </p>
         <p class="texto md:text text-justify py-2">
-          En este sentido, es toda una declaración de intenciones que, tras la inauguración del 
-          festival y la tradicional entrega del Premio Tormo Negro Masfarné, 
-          que este año recaerá  en Fernando Benzo por su novela Los perseguidos, 
-          el propio autor, en su faceta de secretario general de la Federación de Gremios de Editores, 
-          y la profesora en excedencia y reina del thriller infantil y juvenil Beatriz Osés, ganadora, 
-          entre otros, del Premio Barco de Vapor, intenten ofrecer pistas para resolver el misterio 
-          de cómo animar a la lectura en la era de WhatsApp.
+          Uno de los pilares del festival son las Jornadas de Animación a la Lectura 
+          “Con sangre entra”, dirigidas a alumnado desde 5.º de Educación Primaria hasta 4.º de ESO, 
+          con talleres y encuentros diseñados para fomentar la lectura y mejorar la comprensión 
+          lectora y las habilidades lingüísticas.
+        </p>
+        <p class="texto md:text text-justify py-2">
+        El XIII Festival Internacional de Novela Criminal Las Casas Ahorcadas cuenta con el apoyo de 
+        instituciones públicas y entidades colaboradoras comprometidas con la cultura, la educación y 
+        el fomento de la lectura: Diputación de Cuenca, Junta de Comunidades de Castilla la Mancha, 
+        Consorcio Ciudad de Cuenca, Ayuntamiento de Cuenca, General Optica, Masfarné 
+        y Patronato Gil de Albornoz.
         </p>
       </div> <!-- Cierra content columna-->
        <!-- Columna 2  -->
