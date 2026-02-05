@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <<title>Festival de Novela Negra 2026</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente tipo máquina de escribir -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" href="img/Logo.jpg">
+
+  <style>
+    /* Mantener la fuente en todo el sitio */
+    body { font-family: 'Special Elite', serif; }
+    .site-title { letter-spacing: 1px; }
+    @media (max-width: 640px) {
+      .site-title { font-size: 1.15rem; }
+      .site-subtitle { font-size: 1rem; color: #e50914; }
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  /* ======== GALERÍA ======== */
+    .galeria-completa-wrapper {
+      background-color: white;
+      padding: 5px; /* Añade algo de espacio alrededor de las fotos */
+  }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Distribuye el espacio uniformemente */
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding: 0 !important;
+      margin-bottom: 20px;
+      margin-top: 20px;
+         }
+
+    .photo-card {
+    /* En escritorio (3 columnas), cada tarjeta ocupará aproximadamente un tercio del ancho */
+       width: calc(20% ); /* Ajusta el 10px según el espacio deseado entre fotos */
+       margin-left: 30px;
+       margin-right: 30px;
+       margin-bottom: 20px; /* Espaciado inferior para separar las tarjetas */
+      }
+
+    .photo-card:hover {
+      transform: translateY(-0.3vw);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.01);
+      filter: brightness(1.05);
+    }
+
+    
+  .caption-bar {
+    background: #222;              /* color de fondo de la franja */
+    color: #fff;                   /* texto blanco */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-top: 3px solid #e3e3e3; /* línea separadora elegante */
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+/* Efecto al pasar el ratón por la tarjeta */
+  .photo-card:hover .caption-bar {
+    background: #444;
+    color: #f0f0f0;
+  }
+/* ======== LIGHTBOX ======== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+  .video-wrapper {
+    width: 60vw;       /* 🔹 Ancho máximo: 80% del viewport */
+    max-width: 400px;  /* 🔹 Nunca más grande que 960px */
+    }
+
+  .lightbox video {
+     width: 100%;
+    height: auto;       /* 🔹 Ajusta proporción natural del vídeo */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    background: #000;
+    display: block;
+  }
+
+    .close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 2rem;
+      text-decoration: none;
+      z-index: 11;
+      transition: opacity 0.3s ease;
+    }
+    .close:hover {
+       opacity: 0.7;
+    }
+
+    /* ======== RESPONSIVE ======== */
+ @media only screen and (max-width: 600px) {
+  .gallery {     /* En móvil, las fotos pueden apilarse o seguir un flujo más compacto */
+    justify-content: center; /* Centra las tarjetas si es necesario */
+  }
+  
+  .photo-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 5px;
+    margin: 0 0 15px 0;
+  }
+  .photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.photo-card,
+.gallery {
+  overflow: visible !important;
+}
+}
+   /* ======== MINIATURA DE VIDEO ======== */
+.video-card {
+  position: relative;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-thumbnail video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8);
+  margin-left: 25px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.video-thumbnail:hover video {
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+/* Botón de play en el centro */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none; /* evita interferir con el clic */
+}
+
+.video-thumbnail:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+}
+
+  </style>
+</head>
+
+
+<body class="bg-black text-white">
+
+<!-- HEADER -->
+<header class="px-8 py-4 max-w-8xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 items-center px-8 py-4 relative">
+
+    <!-- Logo izquierda -->
+    <div class="flex-shrink-0 flex justify-center md:justify-start">
+      <img 
+        src="img/Logo.jpg"
+        alt="Logo del Club"
+        class="w-40 h-40 object-contain"
+      />
+    </div>
+
+    <!-- Texto centrado -->
+    <div class="text-center">
+      <h1 class="text-lg md:text-2xl text-white leading-tight">
+        XIII FESTIVAL INTERNACIONAL <br>
+        <span class="text-[#e50914] md:text-2xl">
+          DE NOVELA NEGRA Y CRIMINAL   2026
+        </span>
+      </h1>
+    </div>
+
+    <!-- Redes derecha -->
+    <div class="flex justify-center md:justify-end gap-4 text-2xl md:pr-8">
+      <a href="https://www.facebook.com/p/Las-Casas-Ahorcadas-100064629131887/?locale=es_ES"
+         target="_blank" class="text-white hover:text-blue-500">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/lascasasahorcadas/"
+         target="_blank" class="text-white hover:text-pink-500">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://x.com/CasasAhorcadas"
+         target="_blank" class="text-white hover:text-sky-400">
+        <i class="fab fa-x-twitter fa-lg"></i>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!----- GALERÍA DE IMÁGENES --->
+
+<div class="galeria-completa-wrapper"> 
+  <div class="gallery">
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img1"><img src="Galeria_2026_archivos/Miercoles.jpg" alt="Foto 1"></a>
+    </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img2"><img src="Galeria_2026_archivos/2026_1.jpg"></a>
+      </div>
+    </div>  
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img3"></a><img src="Galeria_2026_archivos/2026_2.jpg">
+      </div>
+    </div> 
+  
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img4"><img src="Galeria_2026_archivos/2026_3.jpg"></a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img5"><img src="Galeria_2026_archivos/2026_4.jpg"></a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img6"><img src="Galeria_2026_archivos/2026_5.jpg"></a>
+       </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img7"><img src="Galeria_2026_archivos/2026_6.jpg"></a>
+       </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img8"><img src="Galeria_2026_archivos/2026_7.jpg"></a>
+       </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img9"><img src="Galeria_2026_archivos/2026_8.jpg"></a>
+       </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img10"><img src="Galeria_2026_archivos/2026_9.jpg"></a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img11"><img src="Galeria_2026_archivos/2026_10.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img12"><img src="Galeria_2026_archivos/2026_11.jpg"></a>
+          </div>
+    </div>
+    <a href="#video1">
+        <div class="video-thumbnail">
+            <video src="Galeria_2026_archivos/Pregon.mp4" muted></video>
+            <div class="play-button">▶</div>
+        </div>  
+    </a>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img13"><img src="Galeria_2026_archivos/2026_12.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img14"><img src="Galeria_2026_archivos/2026_13.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img15"><img src="Galeria_2026_archivos/2026_14.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img16"><img src="Galeria_2026_archivos/2026_15.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img17"><img src="Galeria_2026_archivos/2026_16.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img18"><img src="Galeria_2026_archivos/2026_17.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img19"><img src="Galeria_2026_archivos/2026_18.jpg"></a>
+          </div>
+    </div>
+    <div class="photo-card">
+      <div class="item">
+        <a href="#img20"><img src="Galeria_2026_archivos/2026_19.jpg"></a>
+          </div>
+    </div>
+    
+ </div>
+ <!-- Lightbox -->
+ 
+  <div id="img1" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/Miercoles.jpg" alt="Casas Ahorcadas">
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_1.jpg" alt="Beatriz Osés">
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_2.jpg" alt="Foto ampliada 3">
+  </div>
+<div id="img4" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_3.jpg" alt="Foto ampliada 4">
+  </div>
+  <div id="img5" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_4.jpg" alt="Foto ampliada 5">
+  </div>
+  <div id="img6" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_5.jpg" alt="Foto ampliada 6">
+  </div>
+  <div id="img7" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_6.jpg" alt="Foto ampliada 7">
+  </div>
+  <div id="img8" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_7.jpg" alt="Foto ampliada 8">
+  </div>
+  <div id="img9" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_8.jpg" alt="Foto ampliada 9">
+  </div>
+  <div id="img10" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_9.jpg" alt="Foto ampliada 10">
+  </div>
+  <div id="img11" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_10.jpg" alt="Foto ampliada 11">
+  </div>
+  <div id="img12" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_11.jpg" alt="Foto ampliada 12">
+  </div>
+ <div id="video1" class="lightbox">
+  <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+   <div class="video-wrapper">
+      <video controls>
+        <source src="Galeria_2026_archivos/Pregon.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+ </div>
+ <div id="img13" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_12.jpg" alt="Foto ampliada 13">
+  </div>
+
+ <div id="img14" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_13.jpg" alt="Foto ampliada 14">
+  </div>
+  <div id="img15" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_14.jpg" alt="Foto ampliada 15">
+  </div>
+  <div id="img16" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_15.jpg" alt="Foto ampliada 16">
+  </div>
+ <div id="img17" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_16.jpg" alt="Foto ampliada 17">
+  </div>
+  <div id="img18" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_17.jpg" alt="Foto ampliada 18  ">
+  </div>
+  <div id="img19" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_18.jpg" alt="Foto ampliada 19">
+  </div>
+  <div id="img20" class="lightbox">
+    <a href="#" class="close" onclick="history.back(); return false;">&times;</a>
+    <img src="Galeria_2026_archivos/2026_19.jpg" alt="Foto ampliada 20">
+  </div>
+  
+ 
+ 
+ 
+ 
+ 
+ 
+<!-- Botón volver a inicio -->
+      <a
+       href="#"
+       onclick="history.back(); return false;"
+       class="
+        fixed
+        top-5 right-5
+        md:top-32 md:right-5
+        z-50
+        bg-red-600
+        p-4
+        rounded-full
+        shadow-lg
+        hover:bg-red-700
+        transition
+      "
+      title="Volver"
+      >
+      <svg
+        viewBox="0 0 24 24"
+        class="w-8 h-8 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
